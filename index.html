@@ -1,0 +1,1730 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      name="description"
+      content="Top Local Websites builds fast, professional websites for local businesses across Europe. More calls, more bookings, and more customers. Starting from €790."
+    />
+    <link rel="canonical" href="https://toplocalwebsites.com/" />
+    <title>Top Local Websites | We Help Local Businesses Grow Online</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #00b862;
+        --glass-bg: rgba(30, 36, 30, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.06);
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --shadow-subtle: 0 8px 24px rgba(2, 10, 6, 0.28);
+        --glow-primary: 0 6px 30px rgba(0, 194, 110, 0.12);
+        --transition-fast: 280ms cubic-bezier(0.2, 0, 0.2, 1);
+        --theme-transition:
+          background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0e150f;
+        color: #dce5db;
+        overflow-x: hidden;
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: var(--theme-transition);
+      }
+
+      .glass-surface,
+      [class*="glass"] {
+        transition: var(--theme-transition);
+      }
+
+      .glass-surface {
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-subtle);
+        transition:
+          transform var(--transition-fast),
+          box-shadow var(--transition-fast),
+          border-color var(--transition-fast),
+          background 220ms ease;
+        will-change: transform, box-shadow, border-color;
+        cursor: pointer;
+      }
+
+      .glass-surface:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow:
+          var(--glow-primary),
+          0 0 20px rgba(0, 194, 110, 0.2),
+          0 10px 30px rgba(2, 10, 6, 0.35);
+        border-color: rgba(0, 194, 110, 0.3);
+        cursor: pointer;
+      }
+
+      .glass-surface .material-symbols-outlined,
+      .glass-surface svg {
+        display: block;
+        margin: 0 0 0.75rem 0;
+        color: var(--primary-color);
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 600;
+        font-size: 1.75rem;
+        line-height: 1;
+      }
+
+      .glow-hover:hover {
+        box-shadow: var(--glow-primary) !important;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+
+      p,
+      ul,
+      ol,
+      li,
+      footer,
+      .footer-text,
+      .body-text {
+        font-size: 0.9rem;
+      }
+
+      .navbar a,
+      .nav-menu a,
+      .nav-links a,
+      nav a,
+      .nav-link {
+        font-size: 0.93rem !important;
+        font-weight: 500 !important;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+        h3 {
+          font-size: 1.05rem;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s var(--transition-fast),
+          transform 0.7s var(--transition-fast);
+        will-change: transform, opacity;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-group > .reveal-item {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s var(--transition-fast),
+          transform 0.6s var(--transition-fast);
+      }
+
+      .reveal-group.active > .reveal-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .rounded-2xl {
+        border-radius: var(--radius-lg) !important;
+      }
+      .rounded-3xl {
+        border-radius: calc(var(--radius-lg) + 8px) !important;
+      }
+      .rounded-xl {
+        border-radius: var(--radius-md) !important;
+      }
+      .rounded-full {
+        border-radius: 9999px !important;
+      }
+
+      .shadow-sm {
+        box-shadow: 0 6px 18px rgba(2, 10, 6, 0.12) !important;
+      }
+      .shadow-2xl {
+        box-shadow: 0 20px 50px rgba(2, 10, 6, 0.18) !important;
+      }
+
+      button,
+      .inline-block {
+        transition:
+          transform var(--transition-fast),
+          box-shadow var(--transition-fast),
+          background 180ms ease;
+      }
+
+      .bg-primary:hover,
+      .bg-primary:focus {
+        transform: translateY(-4px);
+        box-shadow: var(--glow-primary);
+      }
+
+      #main-header {
+        transition:
+          background 240ms ease,
+          box-shadow 240ms ease,
+          height 240ms ease;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#333b34",
+              "error-container": "#93000a",
+              "on-tertiary-fixed": "#410005",
+              "surface-container-low": "#161d17",
+              "secondary-container": "#404758",
+              "on-tertiary-fixed-variant": "#920117",
+              "on-background": "#dce5db",
+              "on-primary": "#00391c",
+              tertiary: "#ffb3af",
+              "inverse-primary": "#006d3b",
+              "tertiary-fixed": "#ffdad7",
+              "on-surface-variant": "#bbcbbc",
+              outline: "#869587",
+              "on-secondary-fixed-variant": "#404758",
+              "on-secondary": "#293040",
+              "surface-container-highest": "#2f3730",
+              "surface-container-high": "#242c25",
+              "on-secondary-fixed": "#141b2b",
+              background: "#0e150f",
+              "primary-fixed-dim": "#42e189",
+              "outline-variant": "#3c4a3f",
+              "surface-tint": "#00c26e",
+              "on-tertiary": "#68000d",
+              "on-secondary-container": "#aeb5c9",
+              "surface-container": "#1a211b",
+              "tertiary-container": "#ff8580",
+              "surface-variant": "#2f3730",
+              "on-primary-fixed-variant": "#00522b",
+              "secondary-fixed": "#dce2f7",
+              "surface-container-lowest": "#08100a",
+              "inverse-surface": "#dce5db",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2a322c",
+              "surface-dim": "#0e150f",
+              "on-surface": "#dce5db",
+              "secondary-fixed-dim": "#c0c6db",
+              "tertiary-fixed-dim": "#ffb3af",
+              "on-primary-container": "#004825",
+              "primary-container": "#00c26e",
+              "on-error": "#690005",
+              primary: "#00c26e",
+              "primary-fixed": "#65fea3",
+              error: "#ffb4ab",
+              surface: "#1a211b",
+              secondary: "#c0c6db",
+              "on-tertiary-container": "#820013",
+              "on-primary-fixed": "#00210e",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "max-width": "1280px",
+              "margin-mobile": "16px",
+              "margin-desktop": "64px",
+              base: "8px",
+              "stack-sm": "12px",
+              "stack-md": "24px",
+              "stack-lg": "48px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-background text-on-background">
+    <header
+      class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-transparent"
+      id="main-header"
+    >
+      <div
+        class="flex justify-between items-center max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300"
+      >
+        <div class="text-2xl font-bold tracking-tight text-on-surface">
+          <a
+            href="index.html"
+            class="flex items-center gap-3 whitespace-nowrap"
+          >
+            <img
+              alt="Top Local Websites Logo"
+              class="h-[32px] md:h-[40px] w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Rinw5MmMDCfUVED7wSoTb4oEkRuPvk_CqDj11X5dvJoQoOv1lVpRvVhk4SYvWwhVRPTf48VvHoaliQbkClzt0JYEL3oqag7jYRO_1-jTDHLF4jqOnTiErlvD2bFyhjmeP2itryk4Z8T1s6IkY4LstkkVfbXkK_s8lOdbLcKQMw3QynowwVW0GS26Qa0qYx-mfpRQe0TwpSAFZRpX0Omgbl2BoDCzvihOH9UOXq8C1ZyCsoQeV96xf-Fe_SzLg7MVLQFroIKiwugP"
+            />
+            <div class="flex items-center font-black">
+              <div class="flex flex-col">
+                <div class="flex items-center text-[1rem] leading-none">
+                  <span style="color: rgb(46, 204, 113)">TOP</span>
+                  <span class="mx-1" style="color: rgb(255, 255, 255)"
+                    >LOCAL</span
+                  >
+                  <span style="color: rgb(231, 76, 60)">WEBSITES</span>
+                </div>
+                <div class="flex flex-col gap-1.5 mt-1">
+                  <p
+                    class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"
+                  >
+                    Helping Local Businesses Grow Online
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 uppercase tracking-wider text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            href="services.html"
+            >Services</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            href="pricing.html"
+            >Pricing</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            href="work.html"
+            >Our Work</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            href="about.html"
+            >About</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            onclick="window.location.href = 'contact.html'"
+            class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,194,110,0.4)] hover:-translate-y-[3px] text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+          >
+            Book a Call
+          </button>
+          <button
+            id="mobile-menu-toggle"
+            class="md:hidden text-on-surface flex items-center justify-center p-2 focus:outline-none"
+            aria-label="Toggle mobile menu"
+          >
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 z-40 bg-background/95 backdrop-blur-[24px] flex flex-col justify-center items-center gap-8 translate-x-full transition-transform duration-500 ease-in-out md:hidden"
+      >
+        <button
+          id="mobile-menu-close"
+          class="absolute top-6 right-4 text-on-surface p-2 focus:outline-none"
+          aria-label="Close mobile menu"
+        >
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        <a
+          class="text-2xl text-primary font-bold uppercase tracking-wider"
+          href="index.html"
+          >Home</a
+        >
+        <a
+          class="text-2xl text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider"
+          href="services.html"
+          >Services</a
+        >
+        <a
+          class="text-2xl text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider"
+          href="pricing.html"
+          >Pricing</a
+        >
+        <a
+          class="text-2xl text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider"
+          href="work.html"
+          >Our Work</a
+        >
+        <a
+          class="text-2xl text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider"
+          href="about.html"
+          >About</a
+        >
+        <button
+          onclick="window.location.href = 'contact.html'"
+          class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-all duration-300 mt-4 text-[1rem] leading-[1.6]"
+        >
+          Book a Call
+        </button>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[85vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop bg-background"
+      >
+        <div
+          class="max-w-[1280px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center py-stack-lg"
+        >
+          <!-- LEFT CONTENT -->
+          <div class="z-10">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-stack-md"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-primary animate-pulse"
+              ></span>
+              <span
+                class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+                >For local businesses that want to grow</span
+              >
+            </div>
+            <h1
+              class="mb-stack-md text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.2] tracking-tight"
+            >
+              Modern Websites Built to
+              <span style="color: rgb(0, 194, 110); letter-spacing: -0.02em"
+                >Grow Your Business</span
+              >
+            </h1>
+            <p
+              class="text-on-surface-variant mb-stack-lg max-w-lg text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            >
+              Fast, professional websites for local businesses that want to be
+              easier to find, easier to trust and easier to contact. No
+              complicated tech. No confusing systems. Just a website that works.
+            </p>
+            <div class="flex flex-wrap gap-stack-md">
+              <button
+                onclick="window.location.href = 'contact.html'"
+                class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,194,110,0.5)]"
+              >
+                BOOK A FREE CONSULTATION
+              </button>
+              <button
+                onclick="window.location.href = 'pricing.html'"
+                class="border border-white/20 hover:bg-white/5 px-8 py-4 rounded-full font-bold transition-all duration-300"
+              >
+                GET A QUOTE
+              </button>
+            </div>
+            <!-- TRUST BADGES -->
+            <div
+              class="flex flex-wrap gap-6 items-center mt-6 text-[0.75rem] text-on-surface-variant/70 select-none"
+            >
+              <div class="flex items-center gap-2">
+                <svg class="h-5 w-auto" viewBox="0 0 24 24">
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z"
+                  />
+                </svg>
+                <div class="flex text-[#ffc107]">★★★★★</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="h-5 w-auto" viewBox="0 0 24 24">
+                  <path
+                    fill="#1877F2"
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+                <div class="flex text-[#ffc107]">★★★★★</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="h-5 w-auto" viewBox="0 0 24 24">
+                  <path
+                    fill="#00b67a"
+                    d="M24 9.24h-9.17L12 0 9.17 9.24H0l7.42 5.71L4.58 24 12 18.29 19.42 24l-2.84-9.05L24 9.24z"
+                  />
+                </svg>
+                <div class="flex text-[#ffc107]">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-[0.75rem] text-on-surface-variant/60 mt-2">
+              Rated 5.0 stars by local businesses
+            </p>
+          </div>
+          <!-- RIGHT IMAGE -->
+          <div class="relative group perspective">
+            <div
+              class="relative rounded-2xl overflow-hidden border border-white/20 bg-transparent shadow-[0_35px_90px_rgba(0,0,0,0.55)] transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:rotate-[0.5deg]"
+            >
+              <img
+                src="assets/images/local-business-owner-cafe-website-design.webp"
+                alt="Local business owner reviewing their new website on a laptop"
+                class="block w-full h-auto"
+                loading="eager"
+                decoding="async"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/5"
+              ></div>
+              <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                  class="absolute -left-1/2 top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-[-20deg] opacity-0 group-hover:opacity-100 group-hover:translate-x-[250%] transition-all duration-1000 ease-out"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full"
+            ></div>
+            <div
+              class="absolute -bottom-12 -left-10 w-80 h-80 bg-primary/5 rounded-full"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1 — THE PROBLEM (alternating dark) -->
+      <section
+        class="py-24 bg-surface-container-lowest px-margin-mobile md:px-margin-desktop"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="text-center mb-16 reveal active">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-4"
+            >
+              <span class="w-2 h-2 rounded-full bg-primary"></span>
+              <span
+                class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+                >THE PROBLEM</span
+              >
+            </div>
+            <h2
+              class="mb-4 text-[2rem] md:text-[2.5rem] font-semibold leading-[1.3] tracking-tight text-white"
+            >
+              Is Your Website Helping Your Business — or Holding It Back?
+            </h2>
+            <div class="w-24 h-1 bg-primary mx-auto rounded-full my-6"></div>
+            <p
+              class="text-on-surface-variant max-w-2xl mx-auto mb-8 mt-4 text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            >
+              Many local businesses provide great services but lose potential
+              opportunities because their website is outdated, difficult to use
+              or missing altogether. Slow loading, weak search visibility and
+              unclear information can make customers choose a competitor
+              instead. First impressions happen quickly — make yours count.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-group active"
+          >
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              style="transition-delay: 0ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >monitor</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                YOUR WEBSITE LOOKS OUTDATED
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                An outdated website can make your business appear less
+                professional than it really is. We create modern, clear and
+                trustworthy designs that better reflect the quality of your
+                business.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              style="transition-delay: 100ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >search</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                YOUR WEBSITE IS HARD TO FIND
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Weak local SEO foundations and incomplete business information
+                can make it harder for potential customers to discover you. We
+                build search-friendly website structures that support stronger
+                local discoverability.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              style="transition-delay: 200ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >smartphone</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                IT DOES NOT WORK WELL ON MOBILE
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                A difficult mobile experience can make visitors leave before
+                they contact you. We build responsive, mobile-first websites
+                with clear navigation, touch-friendly layouts and
+                performance-conscious design.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              style="transition-delay: 300ms"
+            >
+              <span
+                class="material-symbols-outlined mb-6 block text-4xl text-yellow-400"
+                >warning</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                YOU LOSE CLIENTS SILENTLY
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                70% of small business websites lack a clear call to action.
+                We'll make sure visitors know exactly how to contact you,
+                whether it's by phone, WhatsApp or a simple online booking form.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2 — THE SOLUTION (bg-background) -->
+      <section
+        class="py-24 bg-background px-margin-mobile md:px-margin-desktop relative overflow-hidden"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="text-center mb-16 reveal active">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-4"
+            >
+              <span class="w-2 h-2 rounded-full bg-primary"></span>
+              <span
+                class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+                >THE SOLUTION</span
+              >
+            </div>
+            <h2
+              class="mb-4 text-[2rem] md:text-[2.5rem] font-semibold leading-[1.3] tracking-tight text-white"
+            >
+              Websites Built to Help Your Business Grow
+            </h2>
+            <div class="w-24 h-1 bg-primary mx-auto rounded-full my-6"></div>
+            <p
+              class="text-on-surface-variant max-w-2xl mx-auto mt-6 text-[0.9375rem] md:text-[1rem] leading-[1.6] reveal active"
+            >
+              We create fast, modern websites for local businesses that want to
+              be easier to find, easier to trust and easier to contact. Every
+              website is designed around clear information, practical contact
+              options and a better customer experience.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-group active"
+          >
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >bolt</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                FAST STATIC WEBSITES
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Modern, professional static websites designed for fast loading,
+                efficient performance and a smooth user experience.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >explore</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                CLEAR SITE STRUCTURE
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Clear, intuitive website layouts that help visitors find
+                information quickly and take the next step, whether that means
+                calling, booking or making an enquiry.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >chat</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                WHATSAPP, CALLS & FORMS
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Practical contact tools such as WhatsApp, click-to-call buttons,
+                enquiry forms, email links and booking options, depending on
+                your business needs.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >smartphone</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                MOBILE-FIRST DESIGN
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Responsive, mobile-first layouts designed to provide a clear and
+                easy-to-use experience across phones, tablets and desktop
+                screens.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >location_on</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                LOCAL SEO OPTIMIZATION
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Website foundations designed to support local discoverability
+                alongside your Google Business Profile and other local search
+                signals.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >verified</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                TRUST-BUILDING DESIGN
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Clean, modern design that presents your business professionally,
+                builds confidence and reflects the quality of your services.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >smart_toy</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                AI SEARCH READINESS
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Clear structure and relevant content designed to support
+                visibility across search engines and AI search experiences.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >build</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                MANAGED HOSTING & WEBSITE CARE
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Optional managed hosting, technical support and website care to
+                help keep your website secure, accessible and maintained after
+                launch.
+              </p>
+            </div>
+          </div>
+          <div class="mt-16 text-center reveal active">
+            <a
+              href="services.html"
+              class="inline-block bg-primary text-on-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,194,110,0.5)] text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >LEARN MORE</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS SECTION (bg-surface-container-lowest) -->
+      <section
+        class="relative py-20 md:py-28 overflow-hidden bg-surface-container-lowest"
+      >
+        <div
+          class="absolute -top-24 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 blur-[140px] rounded-full"
+        ></div>
+        <div
+          class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10"
+        >
+          <div class="text-center mb-14">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-5"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-primary animate-pulse"
+              ></span>
+              <span
+                class="text-primary text-xs uppercase tracking-[0.25em] font-semibold"
+                >Results & Momentum</span
+              >
+            </div>
+            <h2
+              class="text-white text-[2.2rem] md:text-[3rem] font-semibold leading-tight mb-4"
+            >
+              Building Momentum From Day One
+            </h2>
+            <div class="w-24 h-1 bg-primary mx-auto rounded-full my-6"></div>
+            <p
+              class="text-white/60 max-w-2xl mx-auto text-[1rem] leading-relaxed"
+            >
+              From the beginning, our focus has been on building fast,
+              professional websites that improve online presentation, support
+              discoverability and make it easier for customers to take action.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div
+              class="glass-surface border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] transition-all duration-300 group"
+            >
+              <div
+                class="text-primary text-[2.2rem] font-bold mb-2 group-hover:scale-110 transition"
+              >
+                7–20 Days
+              </div>
+              <div class="text-white font-semibold mb-1">
+                Typical Delivery Window
+              </div>
+              <div class="text-white/50 text-sm">
+                Clear timelines based on your selected package and project
+                scope.
+              </div>
+            </div>
+            <div
+              class="glass-surface border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] transition-all duration-300 group"
+            >
+              <div
+                class="text-primary text-[2.2rem] font-bold mb-2 group-hover:scale-110 transition"
+              >
+                Client First
+              </div>
+              <div class="text-white font-semibold mb-1">
+                Clear Communication
+              </div>
+              <div class="text-white/50 text-sm">
+                Straightforward collaboration, regular updates and feedback at
+                every key stage.
+              </div>
+            </div>
+            <div
+              class="glass-surface border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] transition-all duration-300 group"
+            >
+              <div
+                class="text-primary text-[2.2rem] font-bold mb-2 group-hover:scale-110 transition"
+              >
+                Conversion
+              </div>
+              <div class="text-white font-semibold mb-1">
+                Clear Customer Journeys
+              </div>
+              <div class="text-white/50 text-sm">
+                Practical layouts that guide visitors toward contacting or
+                booking your business
+              </div>
+            </div>
+            <div
+              class="glass-surface border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] transition-all duration-300 group"
+            >
+              <div
+                class="text-primary text-[2.2rem] font-bold mb-2 group-hover:scale-110 transition"
+              >
+                Mobile-First
+              </div>
+              <div class="text-white font-semibold mb-1">Responsive Design</div>
+              <div class="text-white/50 text-sm">
+                A smooth, accessible experience across phones, tablets and
+                desktop screens.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY WORK WITH US (bg-background) -->
+      <section
+        class="py-24 bg-background px-margin-mobile md:px-margin-desktop"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="text-center mb-16 reveal active">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-4"
+            >
+              <span class="w-2 h-2 rounded-full bg-primary"></span>
+              <span
+                class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+                >WHY WORK WITH US</span
+              >
+            </div>
+            <h2
+              class="mb-4 text-[2rem] md:text-[2.5rem] font-semibold leading-[1.3] tracking-tight text-white"
+            >
+              What Makes Us Different
+            </h2>
+            <div class="w-24 h-1 bg-primary mx-auto rounded-full my-6"></div>
+            <p
+              class="text-on-surface-variant max-w-2xl mx-auto text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            >
+              We keep it simple and honest. You get results — not headaches.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter reveal-group active"
+          >
+            <div
+              class="glass-surface p-8 rounded-2xl reveal-item active"
+              style="transition-delay: 0ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >bolt</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                STRAIGHT TALK
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                We explain everything clearly and keep communication
+                straightforward. No unnecessary technical jargon, confusing
+                systems or complicated processes.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl reveal-item active"
+              style="transition-delay: 100ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >payments</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                FAIR, TRANSPARENT PRICING
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                Clear packages and clearly defined services, with costs
+                explained before work begins. Any additional requirements are
+                discussed and quoted separately.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl reveal-item active"
+              style="transition-delay: 200ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >handshake</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                NO LONG-TERM CONTRACTS
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                You are not tied to an unnecessary long-term commitment. We
+                believe in providing useful services, earning your trust and
+                letting you choose what support you need.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl reveal-item active"
+              style="transition-delay: 300ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >psychology</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                NO-NONSENSE APPROACH
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                We focus on practical solutions rather than unnecessary
+                features. Every recommendation should serve a clear purpose for
+                your business.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl reveal-item active"
+              style="transition-delay: 400ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >star</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                CLIENT-FOCUSED WORK
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                We build around your business, your customers and your
+                priorities. Your feedback is part of the process, helping ensure
+                the final result fits your needs.
+              </p>
+            </div>
+            <div
+              class="glass-surface p-8 rounded-2xl reveal-item active"
+              style="transition-delay: 500ms"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-6 block text-4xl"
+                >build</span
+              >
+              <h3
+                class="mb-3 text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.4] tracking-tight text-white"
+              >
+                CONTINUOUSLY REFINED
+              </h3>
+              <p
+                class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                We keep improving our design methods, performance practices and
+                SEO approach so each project benefits from better processes and
+                current best practices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS SECTION (bg-surface-container-lowest) -->
+      <section
+        class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="text-center mb-16 reveal active">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-4"
+            >
+              <span class="w-2 h-2 rounded-full bg-primary"></span>
+              <span
+                class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+                >TESTIMONIALS</span
+              >
+            </div>
+            <h2
+              class="mb-4 text-[2rem] md:text-[2.5rem] font-semibold leading-[1.3] tracking-tight text-white"
+            >
+              What Local Businesses Say
+            </h2>
+            <div class="w-24 h-1 bg-primary mx-auto rounded-full my-6"></div>
+            <p
+              class="text-on-surface-variant max-w-2xl mx-auto text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+            >
+              Real feedback from local businesses across Ireland and Italy after
+              launching their new websites.
+            </p>
+          </div>
+          <div class="relative group" id="testimonials-container">
+            <button
+              id="prevBtn"
+              class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 border border-white/10 w-10 h-10 rounded-full text-white transition-all duration-200 active:scale-95"
+            >
+              ‹
+            </button>
+            <button
+              id="nextBtn"
+              class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 border border-white/10 w-10 h-10 rounded-full text-white transition-all duration-200 active:scale-95"
+            >
+              ›
+            </button>
+            <div
+              id="carousel"
+              class="flex overflow-x-auto pb-8 gap-gutter scrollbar-hide snap-x snap-mandatory scroll-smooth reveal-group active"
+            >
+              <div
+                class="relative overflow-hidden min-w-[300px] md:min-w-[400px] glass-surface p-8 rounded-2xl snap-center flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+              >
+                <div>
+                  <div class="flex gap-1 mb-4 text-primary">★★★★★</div>
+                  <p class="text-white italic mb-6">
+                    “Since launching our new site, bookings increased by almost
+                    40%. The site is fast, elegant, and perfectly fits our
+                    brand.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="assets/images/Testimonials/angelo-simeone-italy.webp"
+                    class="w-12 h-12 rounded-full object-cover border border-white/20"
+                  />
+                  <div>
+                    <p class="font-bold text-white">Angelo Simeone</p>
+                    <p class="text-white/50 text-[0.75rem] tracking-wide">
+                      Owner — Doppio Zero Café (Dublin)
+                    </p>
+                    <a
+                      href="https://doppio-zero-cafe-in-dublin.netlify.app/"
+                      class="text-xs text-white/50"
+                      >View Website</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative overflow-hidden min-w-[300px] md:min-w-[400px] glass-surface p-8 rounded-2xl snap-center flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+              >
+                <div>
+                  <div class="flex gap-1 mb-4 text-primary">★★★★★</div>
+                  <p class="text-white italic mb-6">
+                    “The new website completely improved our professional image
+                    and helped us attract more industrial clients across Italy.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="assets/images/Testimonials/franco-dellani-italy.webp"
+                    class="w-12 h-12 rounded-full object-cover border border-white/20"
+                  />
+                  <div>
+                    <p class="font-bold text-white">Franco Dellani</p>
+                    <p class="text-white/50 text-[0.75rem] tracking-wide">
+                      CEO — Rotocar SRL (Italy)
+                    </p>
+                    <a
+                      href="https://rotocar-website.netlify.app/"
+                      class="text-xs text-white/50"
+                      >View Website</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative overflow-hidden min-w-[300px] md:min-w-[400px] glass-surface p-8 rounded-2xl snap-center flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+              >
+                <div>
+                  <div class="flex gap-1 mb-4 text-primary">★★★★★</div>
+                  <p class="text-white italic mb-6">
+                    “We started getting consistent online reservations within
+                    two weeks. The website feels premium and trustworthy.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="assets/images/Testimonials/roisin-kelly-ireland.webp"
+                    class="w-12 h-12 rounded-full object-cover border border-white/20"
+                    loading="lazy"
+                    alt="Roisin Kelly"
+                  />
+                  <div>
+                    <p class="font-bold text-white">Roisin Kelly</p>
+                    <p class="text-white/50 text-[0.75rem] tracking-wide">
+                      Owner — The Green Fork (Dublin)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative overflow-hidden min-w-[300px] md:min-w-[400px] glass-surface p-8 rounded-2xl snap-center flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+              >
+                <div>
+                  <div class="flex gap-1 mb-4 text-primary">★★★★★</div>
+                  <p class="text-white italic mb-6">
+                    “Membership sign-ups increased noticeably after launching
+                    the new site. It finally represents our gym properly.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="assets/images/Testimonials/luca-moretti-italy.webp"
+                    class="w-12 h-12 rounded-full object-cover border border-white/20"
+                    loading="lazy"
+                    alt="Luca Moretti"
+                  />
+                  <div>
+                    <p class="font-bold text-white">Luca Moretti</p>
+                    <p class="text-white/50 text-[0.75rem] tracking-wide">
+                      Owner — IronCore Gym (Milan)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative overflow-hidden min-w-[300px] md:min-w-[400px] glass-surface p-8 rounded-2xl snap-center flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+              >
+                <div>
+                  <div class="flex gap-1 mb-4 text-primary">★★★★★</div>
+                  <p class="text-white italic mb-6">
+                    “We now receive daily inquiries through the website. Before
+                    this, everything was word of mouth only.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="assets/images/Testimonials/gianni-petrucci-italy.webp"
+                    class="w-12 h-12 rounded-full object-cover border border-white/20"
+                    loading="lazy"
+                    alt="Gianni Petrucci"
+                  />
+                  <div>
+                    <p class="font-bold text-white">Gianni Petrucci</p>
+                    <p class="text-white/50 text-[0.75rem] tracking-wide">
+                      Landscaping — Verde Roma (Rome)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative overflow-hidden min-w-[300px] md:min-w-[400px] glass-surface p-8 rounded-2xl snap-center flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]"
+              >
+                <div>
+                  <div class="flex gap-1 mb-4 text-primary">★★★★★</div>
+                  <p class="text-white italic mb-6">
+                    “Our boutique finally looks premium online. We started
+                    getting inquiries from Instagram traffic immediately.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="assets/images/Testimonials/emma-sullivan-ireland.webp"
+                    class="w-12 h-12 rounded-full object-cover border border-white/20"
+                    loading="lazy"
+                    alt="Emma Sullivan"
+                  />
+                  <div>
+                    <p class="font-bold text-white">Emma Sullivan</p>
+                    <p class="text-white/50 text-[0.75rem] tracking-wide">
+                      Boutique Owner — Dublin Style House
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA (image overlay, no solid background) -->
+      <section class="relative w-full py-20 md:py-28 overflow-hidden group">
+        <div
+          class="pointer-events-none absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
+        ></div>
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
+        ></div>
+        <div class="absolute inset-0 -z-20 overflow-hidden">
+          <img
+            src="assets/images/toplocalwebsites.webp"
+            alt="Top Local Websites Background"
+            class="w-full h-full object-cover scale-110 transition-transform duration-[6000ms] ease-out group-hover:scale-105"
+          />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#0e150f]/70 via-[#0e150f]/55 to-[#0e150f]/75 -z-10"
+        ></div>
+        <div
+          class="absolute -top-32 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 blur-[140px] rounded-full"
+        ></div>
+        <div
+          class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10"
+        >
+          <div
+            class="relative rounded-3xl border border-white/15 p-10 md:p-14 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_35px_120px_rgba(0,194,110,0.18)] overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-6"
+              >
+                <span class="w-2 h-2 rounded-full bg-primary"></span
+                ><span
+                  class="text-primary font-bold uppercase tracking-[0.25em] text-[0.72rem]"
+                  >GET STARTED</span
+                >
+              </div>
+              <h2
+                class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-6"
+              >
+                Let’s Build a Website That Works for Your Business
+              </h2>
+              <p
+                class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-10"
+              >
+                We create modern, professional websites that make your business
+                easier to discover, understand and contact — with clear pricing
+                and no unnecessary complexity.
+              </p>
+              <button
+                onclick="window.location.href = 'contact.html'"
+                class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-[1rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(0,194,110,0.55)] active:scale-95"
+              >
+                GET IN TOUCH NOW
+              </button>
+              <p class="text-white/40 text-[0.85rem] mt-8 tracking-wide">
+                Starting from €790 • No contracts • Delivered in days, not weeks
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest w-full pt-16 pb-8 border-t border-white/5"
+    >
+      <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+          <div class="md:col-span-4 flex flex-col gap-5">
+            <div class="flex items-center gap-2">
+              <img
+                alt="Top Local Websites Logo"
+                class="h-8 w-auto object-contain"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Rinw5MmMDCfUVED7wSoTb4oEkRuPvk_CqDj11X5dvJoQoOv1lVpRvVhk4SYvWwhVRPTf48VvHoaliQbkClzt0JYEL3oqag7jYRO_1-jTDHLF4jqOnTiErlvD2bFyhjmeP2itryk4Z8T1s6IkY4LstkkVfbXkK_s8lOdbLcKQMw3QynowwVW0GS26Qa0qYx-mfpRQe0TwpSAFZRpX0Omgbl2BoDCzvihOH9UOXq8C1ZyCsoQeV96xf-Fe_SzLg7MVLQFroIKiwugP"
+              />
+              <span
+                class="font-black tracking-tight text-[1.25rem] leading-[1.6]"
+                ><span style="color: rgb(46, 204, 113)">TOP</span
+                ><span style="color: rgb(255, 255, 255)">LOCAL</span
+                ><span style="color: rgb(231, 76, 60)">WEBSITES</span></span
+              >
+            </div>
+            <p
+              class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6] max-w-sm"
+            >
+              Modern websites for local businesses that want more visibility,
+              more customers, and a stronger online presence.
+            </p>
+            <p
+              class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"
+            >
+              Helping Local Businesses Grow Online
+            </p>
+          </div>
+          <div class="md:col-span-2">
+            <h4
+              class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+            >
+              Company
+            </h4>
+            <ul class="flex flex-col gap-3">
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="about.html"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="work.html"
+                  >Our Work</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="pricing.html"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="faq.html"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="md:col-span-3">
+            <h4
+              class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+            >
+              Services
+            </h4>
+            <ul class="flex flex-col gap-3">
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="services.html"
+                  >Website Design</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="services.html"
+                  >Local SEO & AI Search</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="services.html"
+                  >Google Business Profile</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="services.html"
+                  >Hosting & Website Care</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                  href="services.html"
+                  >Content & Business Materials</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="md:col-span-3">
+            <h4
+              class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]"
+            >
+              Get in Touch
+            </h4>
+            <div class="flex flex-col gap-4">
+              <a
+                class="group flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+                href="mailto:info@toplocalwebsites.com"
+                ><span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform text-xl"
+                  >mail</span
+                ><span>info@toplocalwebsites.com</span></a
+              >
+              <div
+                class="flex items-center gap-3 text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
+              >
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >schedule</span
+                ><span>9AM – 7PM (Mon–Sat, Dublin Time)</span>
+              </div>
+            </div>
+            <div class="flex gap-4 items-center mt-6">
+              <a
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 text-on-surface-variant hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                href="https://www.facebook.com/toplocalwebsites"
+                target="_blank"
+                aria-label="Facebook"
+                ><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  /></svg
+              ></a>
+              <a
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 text-on-surface-variant hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                href="#"
+                aria-label="LinkedIn"
+                ><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  /></svg
+              ></a>
+              <a
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 text-on-surface-variant hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                href="#"
+                aria-label="YouTube"
+                ><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[0.8125rem] text-on-surface-variant"
+        >
+          <p>&copy; 2026 Top Local Websites. All rights reserved.</p>
+          <div class="flex items-center gap-4">
+            <a href="privacy.html" class="hover:text-primary transition-colors"
+              >Privacy Policy</a
+            ><a href="terms.html" class="hover:text-primary transition-colors"
+              >Terms of Service</a
+            ><a href="cookies.html" class="hover:text-primary transition-colors"
+              >Cookies Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById("main-header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          header.classList.add(
+            "bg-surface/85",
+            "backdrop-blur-[24px]",
+            "border-white/10",
+            "shadow-2xl",
+            "h-16",
+          );
+          header.classList.remove("h-20");
+        } else {
+          header.classList.remove(
+            "bg-surface/85",
+            "backdrop-blur-[24px]",
+            "border-white/10",
+            "shadow-2xl",
+            "h-16",
+          );
+          header.classList.add("h-20");
+        }
+      });
+
+      const toggleBtn = document.getElementById("mobile-menu-toggle");
+      const closeBtn = document.getElementById("mobile-menu-close");
+      const mobileMenu = document.getElementById("mobile-menu");
+      toggleBtn.addEventListener("click", () =>
+        mobileMenu.classList.remove("translate-x-full"),
+      );
+      closeBtn.addEventListener("click", () =>
+        mobileMenu.classList.add("translate-x-full"),
+      );
+      mobileMenu
+        .querySelectorAll("a, button")
+        .forEach((link) =>
+          link.addEventListener("click", () =>
+            mobileMenu.classList.add("translate-x-full"),
+          ),
+        );
+
+      const revealElements = document.querySelectorAll(
+        ".reveal, .reveal-group",
+      );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              if (entry.target.classList.contains("reveal-group")) {
+                entry.target
+                  .querySelectorAll(".reveal-item")
+                  .forEach((item, idx) =>
+                    setTimeout(() => item.classList.add("active"), idx * 100),
+                  );
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      revealElements.forEach((el) => observer.observe(el));
+
+      // Carousel auto-scroll
+      (function () {
+        const carousel = document.getElementById("carousel");
+        const container = document.getElementById("testimonials-container");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        if (!carousel || !container) return;
+        let autoScrollInterval = null;
+        let isHovering = false;
+        const SCROLL_AMOUNT = 420;
+        const AUTO_SCROLL_DELAY = 4500;
+        function startAutoScroll() {
+          if (autoScrollInterval) clearInterval(autoScrollInterval);
+          autoScrollInterval = setInterval(() => {
+            if (!isHovering) {
+              const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+              let newScrollPos = carousel.scrollLeft + SCROLL_AMOUNT;
+              if (newScrollPos >= maxScroll - 50) carousel.scrollLeft = 0;
+              else
+                carousel.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+            }
+          }, AUTO_SCROLL_DELAY);
+        }
+        container.addEventListener("mouseenter", () => (isHovering = true));
+        carousel.addEventListener("mouseenter", () => (isHovering = true));
+        container.addEventListener("mouseleave", () => (isHovering = false));
+        carousel.addEventListener("mouseleave", () => (isHovering = false));
+        nextBtn.addEventListener("click", () =>
+          carousel.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" }),
+        );
+        prevBtn.addEventListener("click", () =>
+          carousel.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" }),
+        );
+        startAutoScroll();
+      })();
+    </script>
+  </body>
+</html>
