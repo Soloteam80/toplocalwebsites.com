@@ -959,32 +959,6 @@ No obligation • Takes 15 minutes • Practical feedback
     }, { threshold: 0.1 });
 
     revealElements.forEach(el => observer.observe(el));
-
-    // Theme switching logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
-        document.documentElement.classList.add('light-mode');
-        if (themeIcon) themeIcon.textContent = '\u2600\uFE0F';
-    } else {
-        document.documentElement.classList.remove('light-mode');
-        if (themeIcon) themeIcon.textContent = '\uD83C\uDF19';
-    }
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('light-mode')) {
-                document.documentElement.classList.remove('light-mode');
-                localStorage.setItem('theme', 'dark');
-                if (themeIcon) themeIcon.textContent = '\uD83C\uDF19';
-            } else {
-                document.documentElement.classList.add('light-mode');
-                localStorage.setItem('theme', 'light');
-                if (themeIcon) themeIcon.textContent = '\u2600\uFE0F';
-            }
-        });
-    }
 </script>
 </body>
 </html>
