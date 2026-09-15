@@ -22,12 +22,6 @@
             --glow-primary: 0 6px 30px rgba(0, 194, 110, 0.12);
             --transition-fast: 280ms cubic-bezier(0.2, 0, 0.2, 1);
             --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            /* Declares the page as dark to the browser. Without it the UA assumes a light
-               page and paints its own light surfaces on form controls - the autofill fill
-               (beige/yellow in WebKit and Firefox) and the <select> dropdown - which is what
-               reads as a brown/beige cast over the dark form. This also stops Chromium's
-               auto-darkening from tinting the light UA fills. */
-            color-scheme: dark;
         }
 
         body {
@@ -48,7 +42,6 @@
             --glass-border: rgba(0, 0, 0, 0.08);
             --shadow-subtle: 0 8px 24px rgba(0, 0, 0, 0.08);
             --glow-primary: 0 6px 30px rgba(0, 194, 110, 0.06);
-            color-scheme: light;
         }
 
         .light-mode body {
@@ -175,24 +168,23 @@
         }
 
         /* Form inputs
-           IMPORTANT: the Tailwind Forms plugin (loaded through the Play CDN) also emits a
-           component class with the same name: `.form-input,.form-textarea,.form-select,...`
-           setting background-color:#fff, border-color:#6b7280, border-radius:0px, etc.
-           The CDN injects its stylesheet AFTER this <style> block, so those equal-specificity
-           rules would otherwise win and paint the fields white (making typed text invisible).
-           The extra `form .form-input` selectors below raise specificity so this dark form
-           design stays authoritative regardless of stylesheet order. */
+           NOTE: the Tailwind Forms plugin (loaded through the Play CDN) also emits a component
+           class with the same name: `.form-input,.form-textarea,.form-select,...` setting
+           background-color:#fff, border-color:#6b7280, border-radius:0px, etc. The CDN injects
+           its stylesheet AFTER this <style> block, so those equal-specificity rules would
+           otherwise win and paint the fields white (making typed text invisible). The extra
+           `form .form-input` selectors below raise specificity so this dark form design stays
+           authoritative regardless of stylesheet order. */
         .form-input,
         form .form-input {
-            /* Opaque on purpose: this was rgba(14, 21, 15, 0.6), i.e. 60% transparent, so the
-               rendered colour was a blend of the field colour with the blurred glass card
-               (--glass-bg: rgba(30, 36, 30, 0.7) + backdrop-filter: blur(12px)) and the
-               decorative green glow behind it. The composite shifted the hue (olive/brown)
-               and varied by position. #0e150f is the site's dark green/black background token. */
+            /* Opaque dark green/black on purpose: rgba(14, 21, 15, 0.6) is 60% transparent, so
+               the blurred glass card (--glass-bg: rgba(30, 36, 30, 0.7) + backdrop-filter:
+               blur(12px)) and the decorative green glow behind it blended through the field and
+               shifted its hue and brightness. #0e150f is the site's own dark background token. */
             background-color: #0e150f;
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-sm);
-            color: #ffffff;
+            color: #dce5db;
             padding: 0.875rem 1rem;
             font-family: 'Inter', sans-serif;
             font-size: 0.9375rem;
@@ -222,29 +214,31 @@
             box-shadow: 0 0 0 3px rgba(0, 194, 110, 0.12);
         }
         /* Browser autofill (Chrome/Edge/Safari/Firefox) paints autofilled fields with its own
-           beige/yellow UA fill applied with !important, which no background-color can
-           override – only an inset box-shadow can hide it. Without this, the autofilled
-           fields (name/email/phone/URL/business) look beige/brown against the dark form.
-           Both layers are declared on purpose: `background-color` covers engines that let
-           authors override the autofill fill (Firefox :autofill), while the inset box-shadow
-           covers WebKit, where the UA fill cannot be overridden at all. */
+           UA fill, which no author background-color can override - only an inset box-shadow can
+           hide it. `background-color` is kept for engines that do allow authors to override the
+           fill (Firefox :autofill), while the inset box-shadow covers WebKit/Blink. The
+           autofilled fields therefore keep the same dark green/black background as the idle and
+           focused states, and the autofilled text stays readable. */
         .form-input:-webkit-autofill,
         .form-input:-webkit-autofill:hover,
         form .form-input:-webkit-autofill,
         form .form-input:-webkit-autofill:hover,
         form .form-input:autofill {
-            -webkit-text-fill-color: #ffffff;
-            caret-color: #ffffff;
-            background-color: #0e150f;
-            -webkit-box-shadow: inset 0 0 0 1000px #0e150f;
-            box-shadow: inset 0 0 0 1000px #0e150f;
+            /* !important is required here because the engines apply their own autofill fill and
+               text colour from their style sheets with !important. */
+            -webkit-text-fill-color: #dce5db;
+            caret-color: #dce5db;
+            color: #dce5db !important;
+            background-color: #0e150f !important;
+            -webkit-box-shadow: inset 0 0 0 1000px #0e150f !important;
+            box-shadow: inset 0 0 0 1000px #0e150f !important;
             border-color: rgba(255, 255, 255, 0.08);
         }
         .form-input:-webkit-autofill:focus,
         form .form-input:-webkit-autofill:focus,
         form .form-input:autofill:focus {
-            -webkit-box-shadow: inset 0 0 0 1000px #0e150f, 0 0 0 3px rgba(0, 194, 110, 0.12);
-            box-shadow: inset 0 0 0 1000px #0e150f, 0 0 0 3px rgba(0, 194, 110, 0.12);
+            -webkit-box-shadow: inset 0 0 0 1000px #0e150f, 0 0 0 3px rgba(0, 194, 110, 0.12) !important;
+            box-shadow: inset 0 0 0 1000px #0e150f, 0 0 0 3px rgba(0, 194, 110, 0.12) !important;
             border-color: #00c26e;
         }
         html.light-mode .form-input:-webkit-autofill,
@@ -252,9 +246,10 @@
         html.light-mode .form-input:-webkit-autofill:focus {
             -webkit-text-fill-color: #1a2a1a;
             caret-color: #1a2a1a;
-            background-color: #f4f8f5;
-            -webkit-box-shadow: inset 0 0 0 1000px #f4f8f5;
-            box-shadow: inset 0 0 0 1000px #f4f8f5;
+            color: #1a2a1a !important;
+            background-color: #f4f8f5 !important;
+            -webkit-box-shadow: inset 0 0 0 1000px #f4f8f5 !important;
+            box-shadow: inset 0 0 0 1000px #f4f8f5 !important;
         }
         select.form-input {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23bbcbbc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
@@ -544,7 +539,7 @@
                         type="text"
                         required
                         placeholder="John Smith"
-                        class="form-input text-white"
+                        class="form-input"
                         autocomplete="name"
                     />
                 </div>
@@ -563,7 +558,7 @@
                         type="email"
                         required
                         placeholder="john@email.com"
-                        class="form-input text-white"
+                        class="form-input"
                         autocomplete="email"
                     />
                 </div>
@@ -585,7 +580,7 @@
                         name="phone"
                         type="tel"
                         placeholder="+44 7123 456789"
-                        class="form-input text-white"
+                        class="form-input"
                         autocomplete="tel"
                     />
                 </div>
@@ -604,7 +599,7 @@
                         name="business-name"
                         type="text"
                         placeholder="Smith Plumbing Ltd"
-                        class="form-input text-white"
+                        class="form-input"
                         autocomplete="organization"
                     />
                 </div>
@@ -625,7 +620,7 @@
                     name="current-website"
                     type="url"
                     placeholder="https://www.yourwebsite.com"
-                    class="form-input text-white"
+                    class="form-input"
                     autocomplete="url"
                 />
             </div>
@@ -641,7 +636,7 @@
                         <span class="text-on-surface-variant font-normal">(optional)</span>
                     </label>
 
-                    <select id="preferred-day" name="preferred-day" class="form-input text-white">
+                    <select id="preferred-day" name="preferred-day" class="form-input">
                         <option value="" selected>Select a day</option>
                         <option value="monday">Monday</option>
                         <option value="tuesday">Tuesday</option>
@@ -662,7 +657,7 @@
                         <span class="text-on-surface-variant font-normal">(optional)</span>
                     </label>
 
-                    <select id="best-time" name="best-time" class="form-input text-white">
+                    <select id="best-time" name="best-time" class="form-input">
                         <option value="" selected>Select a time</option>
                         <option value="morning">Morning (9am – 12pm)</option>
                         <option value="afternoon">Afternoon (12pm – 5pm)</option>
@@ -682,7 +677,7 @@
                     <span class="text-on-surface-variant font-normal">(optional)</span>
                 </label>
 
-                <select id="service" name="service" class="form-input text-white">
+                <select id="service" name="service" class="form-input">
                     <option value="" selected>Select a service</option>
                     <option value="consultation">Free Consultation</option>
                     <option value="new-website">New Website</option>
@@ -710,7 +705,7 @@
                     name="project-details"
                     rows="5"
                     placeholder="Tell us about your business, what you need and what you would like to improve..."
-                    class="form-input resize-none text-white"
+                    class="form-input resize-none"
                 ></textarea>
             </div>
 
