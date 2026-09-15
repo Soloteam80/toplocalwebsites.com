@@ -167,8 +167,16 @@
             scroll-margin-top: 80px;
         }
 
-        /* Form inputs */
-        .form-input {
+        /* Form inputs
+           IMPORTANT: the Tailwind Forms plugin (loaded through the Play CDN) also emits a
+           component class with the same name: `.form-input,.form-textarea,.form-select,...`
+           setting background-color:#fff, border-color:#6b7280, border-radius:0px, etc.
+           The CDN injects its stylesheet AFTER this <style> block, so those equal-specificity
+           rules would otherwise win and paint the fields white (making typed text invisible).
+           The extra `form .form-input` selectors below raise specificity so this dark form
+           design stays authoritative regardless of stylesheet order. */
+        .form-input,
+        form .form-input {
             background: rgba(14, 21, 15, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-sm);
@@ -188,13 +196,16 @@
             color: #1a2a1a;
             border-color: rgba(0, 0, 0, 0.12);
         }
-        .form-input::placeholder {
+        .form-input::placeholder,
+        form .form-input::placeholder {
             color: rgba(187, 203, 188, 0.45);
         }
         .light-mode .form-input::placeholder {
             color: rgba(60, 80, 60, 0.4);
         }
-        .form-input:focus {
+        .form-input:focus,
+        form .form-input:focus {
+            background: rgba(14, 21, 15, 0.6);
             border-color: #00c26e;
             box-shadow: 0 0 0 3px rgba(0, 194, 110, 0.12);
         }
