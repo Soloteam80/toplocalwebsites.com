@@ -18,7 +18,7 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #080D0A;
+        background-color: #080d0a;
         color: #f1f5f1;
         overflow-x: hidden;
         font-size: 16px;
@@ -173,6 +173,21 @@
     </script>
   </head>
   <body class="bg-background text-on-background">
+    <!-- Italian-inspired divider -->
+    <div
+      class="w-full h-[5px]"
+      style="
+        background: linear-gradient(
+          90deg,
+          #008c45 0%,
+          #008c45 33.33%,
+          #f4f1e8 33.33%,
+          #f4f1e8 66.66%,
+          #cd212a 66.66%,
+          #cd212a 100%
+        );
+      "
+    ></div>
     <!-- TopNavBar -->
     <header
       class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-transparent"
@@ -306,7 +321,7 @@
         class="relative min-h-[50vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop py-12"
       >
         <div
-          class="max-w-[1280px] mx-auto w-full text-center relative z-10 reveal active"
+          class="max-w-[1280px] mx-auto w-full text-center relative z-10 reveal"
         >
           <div
             class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-stack-md"
@@ -334,7 +349,8 @@
           ></div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- FAQ List Section -->
       <section
         class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest"
@@ -727,18 +743,46 @@
         </div>
       </section>
 
-      <!-- Back to Homepage Link -->
+      <!-- Back to Homepage -->
       <div
-        class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop text-center py-12"
+        class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-10"
       >
-        <a
-          class="inline-block text-primary font-semibold text-[0.9375rem] md:text-[1rem] leading-[1.6] underline-offset-4 transition-colors duration-300 hover:text-primary-fixed-dim hover:underline"
-          href="index.html"
-          >Back to Homepage</a
-        >
+        <div class="flex items-center justify-center gap-4">
+          <!-- Left accent line -->
+          <span
+            class="hidden sm:block w-16 md:w-24 h-px bg-gradient-to-r from-transparent to-primary/40"
+          ></span>
+
+          <!-- Navigation link -->
+          <a
+            href="index.html"
+            class="group inline-flex items-center gap-3 text-primary font-semibold text-[0.9rem] md:text-[0.95rem] tracking-wide transition-all duration-300 hover:text-primary-fixed-dim"
+          >
+            <span
+              class="w-9 h-9 rounded-full border border-primary/25 bg-primary/5 flex items-center justify-center transition-all duration-300 group-hover:-translate-x-1 group-hover:border-primary/50 group-hover:bg-primary/10"
+            >
+              <span class="material-symbols-outlined text-[1.1rem]">
+                arrow_back
+              </span>
+            </span>
+
+            <span class="relative">
+              Back to Homepage
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"
+              ></span>
+            </span>
+          </a>
+
+          <!-- Right accent line -->
+          <span
+            class="hidden sm:block w-16 md:w-24 h-px bg-gradient-to-l from-transparent to-primary/40"
+          ></span>
+        </div>
       </div>
     </main>
-
+    <!-- Soft white divider -->
+    <div class="w-full h-px bg-[#DDE5DF]/50"></div>
     <!-- Footer -->
     <footer
       class="bg-surface-container-lowest w-full pt-16 border-t border-white/5"
@@ -768,7 +812,7 @@
             <p
               class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"
             >
-              Helping Local Businesses Grow Online
+              <u>Helping Local Businesses Grow Online</u> 🙂
             </p>
           </div>
           <div class="md:col-span-2">
@@ -915,22 +959,30 @@
           </div>
         </div>
       </div>
-      <div style="background-color: #252A27">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div style="background-color: #252a27">
+        <div
+          class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop"
+        >
           <div
-            class="border-t border-white/5 pt-6 pb-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 items-center text-[0.8125rem] text-on-surface-variant"
+            class="border-t border-white/5 pt-3 pb-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 text-[0.8125rem] text-on-surface-variant"
           >
-            <p class="text-center md:col-span-9">&copy; 2026 Top Local Websites. All rights reserved.</p>
-            <div class="flex items-center gap-4 justify-center md:justify-start md:col-span-3">
-            <a href="privacy.html" class="hover:text-primary transition-colors"
-              >Privacy Policy</a
-            >
-            <a href="terms.html" class="hover:text-primary transition-colors"
-              >Terms of Service</a
-            >
-            <a href="cookies.html" class="hover:text-primary transition-colors"
-              >Cookies Policy</a
-            >
+            <p class="italic whitespace-nowrap">
+              &copy; 2026 Top Local Websites. All rights reserved.
+            </p>
+            <div class="flex flex-wrap items-center gap-6 whitespace-nowrap">
+              <a
+                href="privacy.html"
+                class="hover:text-primary transition-colors"
+                >Privacy Policy</a
+              >
+              <a href="terms.html" class="hover:text-primary transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="cookies.html"
+                class="hover:text-primary transition-colors"
+                >Cookies Policy</a
+              >
             </div>
           </div>
         </div>
@@ -1008,6 +1060,35 @@
       );
 
       revealElements.forEach((el) => observer.observe(el));
+    </script>
+    <!-- Back to top -->
+    <button
+      class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex h-[42px] w-[42px] md:h-11 md:w-11 items-center justify-center rounded-full border border-white/20 bg-primary text-on-primary shadow-[0_0_20px_rgba(0,194,110,0.35)] opacity-0 invisible pointer-events-none transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <span class="material-symbols-outlined text-xl leading-none"
+        >arrow_upward</span
+      >
+    </button>
+    <script>
+      (function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (!backToTop) return;
+        const updateBackToTop = () => {
+          const show = window.scrollY > 400;
+          backToTop.classList.toggle("opacity-0", !show);
+          backToTop.classList.toggle("invisible", !show);
+          backToTop.classList.toggle("pointer-events-none", !show);
+        };
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        window.addEventListener("load", updateBackToTop);
+        updateBackToTop();
+      })();
     </script>
   </body>
 </html>

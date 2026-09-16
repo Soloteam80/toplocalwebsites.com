@@ -234,6 +234,20 @@
     .light-mode .bg-white\/5 {
         background-color: rgba(0, 0, 0, 0.03) !important;
     }
+
+    /* Cinematic hero background motion */
+    @keyframes heroCinematic {
+        0% {
+            transform: scale(1.05) translate3d(0, 0, 0);
+        }
+        100% {
+            transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+        }
+    }
+    .hero-cinematic {
+        animation: heroCinematic 22s ease-in-out infinite alternate;
+        will-change: transform;
+    }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -311,6 +325,21 @@
 </script>
 </head>
 <body class="bg-background text-on-background">
+    <!-- Italian-inspired divider -->
+<div
+    class="w-full h-[5px]"
+    style="
+        background: linear-gradient(
+            90deg,
+            #008C45 0%,
+            #008C45 33.33%,
+            #F4F1E8 33.33%,
+            #F4F1E8 66.66%,
+            #CD212A 66.66%,
+            #CD212A 100%
+        );
+    "
+></div>
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-transparent" id="main-header">
 <div class="flex justify-between items-center max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300">
@@ -377,7 +406,7 @@
             fetchpriority="high"
             loading="eager"
             alt="Website pricing packages for local businesses"
-            class="w-full h-full object-cover"
+            class="hero-cinematic w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-[#080D0A]/75"></div>
     </div>
@@ -385,7 +414,7 @@
     <!-- Content -->
     <div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop py-12">
 
-        <div class="max-w-[900px]">
+        <div class="max-w-[900px] reveal">
 
             <!-- Badge -->
             <div class="mb-stack-md">
@@ -446,6 +475,10 @@
     </div>
 </div>
 </section>
+<!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
 <!-- Pricing Cards / Packages Section -->
 <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-background">
     <div class="max-w-[1100px] mx-auto">
@@ -936,30 +969,51 @@
 
 </div>
 </section>
+<!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
 <!-- FINAL CTA SECTION -->
-<section class="relative w-full py-20 md:py-28 overflow-hidden group">
-<div class="pointer-events-none absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
-<div class="pointer-events-none absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+<section class="relative w-full py-16 md:py-20 overflow-hidden group">
+
+<!-- Background image -->
 <div class="absolute inset-0 -z-20 overflow-hidden"><img src="assets/images/custom-website-build-local-business-laptop.webp" loading="lazy" alt="Call to action background" class="w-full h-full object-cover scale-110 transition-transform duration-[6000ms] ease-out group-hover:scale-105"/></div>
+
+<!-- Dark overlay -->
 <div class="absolute inset-0 bg-gradient-to-b from-[#080D0A]/70 via-[#080D0A]/55 to-[#080D0A]/75 -z-10"></div>
-<div class="absolute -top-32 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
-<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 blur-[140px] rounded-full"></div>
-<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10">
-<div class="relative rounded-3xl border border-white/15 p-10 md:p-14 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_35px_120px_rgba(0,194,110,0.18)] overflow-hidden">
-<div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-<div class="relative z-10">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-6"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-primary font-bold uppercase tracking-[0.25em] text-[0.72rem]">READY TO GROW?</span></div>
-<h2 class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-6">Let's Build Your Website</h2>
-<p class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-10">Choose the package that fits your business and get a professional website built around your needs, with clear pricing and defined delivery timelines.</p>
-<div class="flex flex-wrap justify-center gap-4 mb-6">
+
+<!-- Main CTA container -->
+<div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+
+<!-- Framed CTA -->
+<div class="relative rounded-3xl border border-white/15 px-8 py-10 md:px-12 md:py-12 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] overflow-hidden">
+
+<!-- CTA content -->
+<div class="max-w-3xl mx-auto text-center">
+
+<!-- Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-5"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-primary font-bold uppercase tracking-[0.25em] text-[0.72rem]">READY TO GROW?</span></div>
+
+<!-- Heading -->
+<h2 class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-5">Let's Build Your Website</h2>
+
+<!-- Description -->
+<p class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-8">Choose the package that fits your business and get a professional website built around your needs, with clear pricing and defined delivery timelines.</p>
+
+<!-- Button -->
 <a href="contact.html" class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-[1rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(0,194,110,0.55)] active:scale-95">LET'S TALK</a>
-</div>
-<p class="text-white/40 text-[0.85rem] mt-8 tracking-wide">Starting from €790 • No contracts • Clear project timelines</p>
+
+<!-- Supporting text -->
+<p class="text-white/40 text-[0.85rem] mt-6 tracking-wide">Starting from €790 • No contracts • Clear project timelines</p>
+
 </div>
 </div>
 </div>
 </section>
-
+<!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
 <!-- Footer -->
     <footer class="bg-surface-container-lowest w-full pt-16 border-t border-white/5">
 <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
@@ -967,7 +1021,7 @@
 <div class="md:col-span-4 flex flex-col gap-5">
 <div class="flex items-center gap-2"><img alt="Top Local Websites Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Rinw5MmMDCfUVED7wSoTb4oEkRuPvk_CqDj11X5dvJoQoOv1lVpRvVhk4SYvWwhVRPTf48VvHoaliQbkClzt0JYEL3oqag7jYRO_1-jTDHLF4jqOnTiErlvD2bFyhjmeP2itryk4Z8T1s6IkY4LstkkVfbXkK_s8lOdbLcKQMw3QynowwVW0GS26Qa0qYx-mfpRQe0TwpSAFZRpX0Omgbl2BoDCzvihOH9UOXq8C1ZyCsoQeV96xf-Fe_SzLg7MVLQFroIKiwugP"/><span class="font-black tracking-tight text-[1.25rem] leading-[1.6]"><span class="text-[#2ecc71]">TOP</span><span class="text-white">LOCAL</span><span class="text-[#e74c3c]">WEBSITES</span></span></div>
 <p class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6] max-w-sm">Modern websites for local businesses that want more visibility, more customers, and a stronger online presence.</p>
-<p class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic">Helping Local Businesses Grow Online</p>
+<p class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"><u>Helping Local Businesses Grow Online</u> 🙂</p>
 </div>
 <div class="md:col-span-2"><h4 class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]">Company</h4><ul class="flex flex-col gap-3"><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="about.html">About</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="work.html">Our Work</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="pricing.html">Pricing</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="contact.html">Contact</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="faq.html">FAQ</a></li></ul></div>
 <div class="md:col-span-3"><h4 class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]">Services</h4><ul class="flex flex-col gap-3"><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="services.html">Website Design</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="services.html"> Local SEO & AI Search</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="services.html">Google Business Profile</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="services.html">Hosting & Website Care</a></li><li><a class="text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]" href="services.html">Content & Business Materials</a></li></ul></div>
@@ -976,7 +1030,7 @@
 </div>
 <div style="background-color: #252A27">
 <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="border-t border-white/5 pt-6 pb-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 items-center text-[0.8125rem] text-on-surface-variant"><p class="text-center md:col-span-9">&copy; 2026 Top Local Websites. All rights reserved.</p><div class="flex items-center gap-4 justify-center md:justify-start md:col-span-3"><a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a><a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a><a href="cookies.html" class="hover:text-primary transition-colors">Cookies Policy</a></div></div>
+<div class="border-t border-white/5 pt-3 pb-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 text-[0.8125rem] text-on-surface-variant"><p class="italic whitespace-nowrap">&copy; 2026 Top Local Websites. All rights reserved.</p><div class="flex flex-wrap items-center gap-6 whitespace-nowrap"><a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a><a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a><a href="cookies.html" class="hover:text-primary transition-colors">Cookies Policy</a></div></div>
 </div>
 </div>
 </footer>
@@ -1051,6 +1105,33 @@ const dirObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 leftReveal.forEach(el => dirObserver.observe(el));
 rightReveal.forEach(el => dirObserver.observe(el));
+</script>
+<!-- Back to top -->
+<button
+  class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex h-[42px] w-[42px] md:h-11 md:w-11 items-center justify-center rounded-full border border-white/20 bg-primary text-on-primary shadow-[0_0_20px_rgba(0,194,110,0.35)] opacity-0 invisible pointer-events-none transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+  id="back-to-top"
+  type="button"
+  aria-label="Back to top"
+>
+  <span class="material-symbols-outlined text-xl leading-none">arrow_upward</span>
+</button>
+<script>
+(function () {
+  const backToTop = document.getElementById("back-to-top");
+  if (!backToTop) return;
+  const updateBackToTop = () => {
+    const show = window.scrollY > 400;
+    backToTop.classList.toggle("opacity-0", !show);
+    backToTop.classList.toggle("invisible", !show);
+    backToTop.classList.toggle("pointer-events-none", !show);
+  };
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  window.addEventListener("scroll", updateBackToTop, { passive: true });
+  window.addEventListener("load", updateBackToTop);
+  updateBackToTop();
+})();
 </script>
 </body>
 </html>

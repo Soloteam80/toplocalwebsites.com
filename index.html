@@ -36,7 +36,7 @@
 
       body {
         font-family: "Inter", sans-serif;
-        background-color: #080D0A;
+        background-color: #080d0a;
         color: #f1f5f1;
         overflow-x: hidden;
         font-size: 14px;
@@ -160,10 +160,10 @@
 
       .reveal {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(30px);
         transition:
-          opacity 0.7s var(--transition-fast),
-          transform 0.7s var(--transition-fast);
+          opacity 0.8s cubic-bezier(0.2, 0, 0.2, 1),
+          transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
         will-change: transform, opacity;
       }
 
@@ -308,6 +308,21 @@
         },
       };
     </script>
+    <!-- Italian-inspired divider -->
+    <div
+      class="w-full h-[5px]"
+      style="
+        background: linear-gradient(
+          90deg,
+          #008c45 0%,
+          #008c45 33.33%,
+          #f4f1e8 33.33%,
+          #f4f1e8 66.66%,
+          #cd212a 66.66%,
+          #cd212a 100%
+        );
+      "
+    ></div>
   </head>
 
   <body class="bg-background text-on-background">
@@ -445,7 +460,7 @@
           class="max-w-[1280px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center py-stack-lg"
         >
           <!-- LEFT CONTENT -->
-          <div class="z-10">
+          <div class="z-10 reveal">
             <div
               class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-stack-md"
             >
@@ -564,7 +579,8 @@
           </div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- SECTION 1 — THE PROBLEM (alternating dark) -->
       <section
         class="py-24 bg-surface-container-lowest px-margin-mobile md:px-margin-desktop"
@@ -599,7 +615,7 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-group active"
           >
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
               style="transition-delay: 0ms"
             >
               <span
@@ -621,7 +637,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
               style="transition-delay: 100ms"
             >
               <span
@@ -643,7 +659,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
               style="transition-delay: 200ms"
             >
               <span
@@ -665,7 +681,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
               style="transition-delay: 300ms"
             >
               <span
@@ -688,7 +704,6 @@
           </div>
         </div>
       </section>
-
       <!-- SECTION 2 — THE SOLUTION (bg-background) -->
       <section
         class="py-24 bg-background px-margin-mobile md:px-margin-desktop relative overflow-hidden"
@@ -722,7 +737,7 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-group active"
           >
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -742,7 +757,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -762,7 +777,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -782,7 +797,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -802,7 +817,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -822,7 +837,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -841,7 +856,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -861,7 +876,7 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl shadow-sm reveal-item active"
+              class="glass-surface p-8 rounded-2xl reveal-item active"
             >
               <span
                 class="material-symbols-outlined text-primary mb-6 block text-4xl"
@@ -890,7 +905,8 @@
           </div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- STATS SECTION (bg-surface-container-lowest) -->
       <section
         class="relative py-20 md:py-28 overflow-hidden bg-surface-container-lowest"
@@ -1363,15 +1379,11 @@
           </div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- FINAL CTA (image overlay, no solid background) -->
-      <section class="relative w-full py-20 md:py-28 overflow-hidden group">
-        <div
-          class="pointer-events-none absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
-        ></div>
-        <div
-          class="pointer-events-none absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
-        ></div>
+      <section class="relative w-full py-16 md:py-20 overflow-hidden group">
+        <!-- Background image -->
         <div class="absolute inset-0 -z-20 overflow-hidden">
           <img
             src="assets/images/toplocalwebsites.webp"
@@ -1379,41 +1391,43 @@
             class="w-full h-full object-cover scale-110 transition-transform duration-[6000ms] ease-out group-hover:scale-105"
           />
         </div>
+
+        <!-- Dark overlay -->
         <div
           class="absolute inset-0 bg-gradient-to-b from-[#080D0A]/70 via-[#080D0A]/55 to-[#080D0A]/75 -z-10"
         ></div>
+
+        <!-- Main CTA container -->
         <div
-          class="absolute -top-32 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"
-        ></div>
-        <div
-          class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 blur-[140px] rounded-full"
-        ></div>
-        <div
-          class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10"
+          class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10"
         >
+          <!-- Framed CTA -->
           <div
-            class="relative rounded-3xl border border-white/15 p-10 md:p-14 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_35px_120px_rgba(0,194,110,0.18)] overflow-hidden"
+            class="relative rounded-3xl border border-white/15 px-8 py-10 md:px-12 md:py-12 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] overflow-hidden"
           >
-            <div
-              class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            ></div>
-            <div class="relative z-10">
+            <!-- CTA content -->
+            <div class="max-w-3xl mx-auto text-center">
+              <!-- Badge -->
               <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-6"
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-5"
               >
-                <span class="w-2 h-2 rounded-full bg-primary"></span
-                ><span
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span
                   class="text-primary font-bold uppercase tracking-[0.25em] text-[0.72rem]"
-                  >GET STARTED</span
                 >
+                  GET STARTED
+                </span>
               </div>
+              <!-- Heading -->
               <h2
-                class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-6"
+                class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-5"
               >
                 Let’s Build a Website That Works for Your Business
               </h2>
+
+              <!-- Description -->
               <p
-                class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-10"
+                class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-8"
               >
                 We create modern, professional websites that make your business
                 easier to discover, understand and contact — with clear pricing
@@ -1425,7 +1439,7 @@
               >
                 LET’S TALK NOW
               </button>
-              <p class="text-white/40 text-[0.85rem] mt-8 tracking-wide">
+              <p class="text-white/40 text-[0.85rem] mt-6 tracking-wide">
                 Starting from €790 • No contracts • Delivered in days, not weeks
               </p>
             </div>
@@ -1433,7 +1447,8 @@
         </div>
       </section>
     </main>
-
+    <!-- Soft white divider -->
+    <div class="w-full h-px bg-[#DDE5DF]/50"></div>
     <!-- Footer -->
     <footer
       class="bg-surface-container-lowest w-full pt-16 border-t border-white/5"
@@ -1463,7 +1478,7 @@
             <p
               class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"
             >
-              Helping Local Businesses Grow Online
+              <u>Helping Local Businesses Grow Online</u> 🙂
             </p>
           </div>
           <div class="md:col-span-2">
@@ -1610,20 +1625,28 @@
           </div>
         </div>
       </div>
-      <div style="background-color: #252A27">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div style="background-color: #252a27">
+        <div
+          class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop"
+        >
           <div
-            class="border-t border-white/5 pt-6 pb-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 items-center text-[0.8125rem] text-on-surface-variant"
+            class="border-t border-white/5 pt-3 pb-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 text-[0.8125rem] text-on-surface-variant"
           >
-            <p class="text-center md:col-span-9">&copy; 2026 Top Local Websites. All rights reserved.</p>
-            <div class="flex items-center gap-4 justify-center md:justify-start md:col-span-3">
-            <a href="privacy.html" class="hover:text-primary transition-colors"
-              >Privacy Policy</a
-            ><a href="terms.html" class="hover:text-primary transition-colors"
-              >Terms of Service</a
-            ><a href="cookies.html" class="hover:text-primary transition-colors"
-              >Cookies Policy</a
-            >
+            <p class="italic whitespace-nowrap">
+              &copy; 2026 Top Local Websites. All rights reserved.
+            </p>
+            <div class="flex flex-wrap items-center gap-6 whitespace-nowrap">
+              <a
+                href="privacy.html"
+                class="hover:text-primary transition-colors"
+                >Privacy Policy</a
+              ><a href="terms.html" class="hover:text-primary transition-colors"
+                >Terms of Service</a
+              ><a
+                href="cookies.html"
+                class="hover:text-primary transition-colors"
+                >Cookies Policy</a
+              >
             </div>
           </div>
         </div>
@@ -1728,6 +1751,35 @@
           carousel.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" }),
         );
         startAutoScroll();
+      })();
+    </script>
+    <!-- Back to top -->
+    <button
+      class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex h-[42px] w-[42px] md:h-11 md:w-11 items-center justify-center rounded-full border border-white/20 bg-primary text-on-primary shadow-[0_0_20px_rgba(0,194,110,0.35)] opacity-0 invisible pointer-events-none transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <span class="material-symbols-outlined text-xl leading-none"
+        >arrow_upward</span
+      >
+    </button>
+    <script>
+      (function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (!backToTop) return;
+        const updateBackToTop = () => {
+          const show = window.scrollY > 400;
+          backToTop.classList.toggle("opacity-0", !show);
+          backToTop.classList.toggle("invisible", !show);
+          backToTop.classList.toggle("pointer-events-none", !show);
+        };
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        window.addEventListener("load", updateBackToTop);
+        updateBackToTop();
       })();
     </script>
   </body>

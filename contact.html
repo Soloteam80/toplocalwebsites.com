@@ -172,19 +172,20 @@
            class with the same name: `.form-input,.form-textarea,.form-select,...` setting
            background-color:#fff, border-color:#6b7280, border-radius:0px, etc. The CDN injects
            its stylesheet AFTER this <style> block, so those equal-specificity rules would
-           otherwise win and paint the fields white (making typed text invisible). The extra
-           `form .form-input` selectors below raise specificity so this dark form design stays
-           authoritative regardless of stylesheet order. */
+           otherwise win and paint them pure white. The extra `form .form-input` selectors below
+           raise specificity so this light form design stays authoritative regardless of
+           stylesheet order. */
         .form-input,
         form .form-input {
-            /* Opaque deep green-black on purpose: rgba(14, 21, 15, 0.6) is 60% transparent, so
-               the blurred glass card (--glass-bg: rgba(21, 29, 23, 0.72) + backdrop-filter:
-               blur(12px)) and the decorative green glow behind it blended through the field and
-               shifted its hue and brightness. #080D0A is the site's own dark background token. */
-            background-color: #080D0A;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            /* Opaque, soft off-white with a faint green tint (never pure white). The fields sit
+               on a blurred dark glass card, so an opaque light fill keeps typed text and
+               placeholders clearly readable and stays consistent across input, select and
+               textarea. */
+            background-color: #E8EEE9;
+            border: 1px solid rgba(16, 24, 18, 0.18);
             border-radius: var(--radius-sm);
-            color: #f1f5f1;
+            color: #101812;
+            caret-color: #00C26E;
             padding: 0.875rem 1rem;
             font-family: 'Inter', sans-serif;
             font-size: 0.9375rem;
@@ -196,29 +197,43 @@
             -webkit-appearance: none;
         }
         .light-mode .form-input {
-            background-color: #f4f8f5;
-            color: #1a2a1a;
-            border-color: rgba(0, 0, 0, 0.12);
+            background-color: #E8EEE9;
+            color: #101812;
+            border-color: rgba(16, 24, 18, 0.18);
         }
         .form-input::placeholder,
         form .form-input::placeholder {
-            color: rgba(164, 178, 167, 0.45);
+            color: #5E6B62;
+            opacity: 1;
         }
         .light-mode .form-input::placeholder {
-            color: rgba(60, 80, 60, 0.4);
+            color: #5E6B62;
         }
         .form-input:focus,
         form .form-input:focus {
-            background-color: #080D0A;
-            border-color: #00c26e;
-            box-shadow: 0 0 0 3px rgba(0, 194, 110, 0.12);
+            /* Focus keeps the same light field surface: a clearly visible #080D0A border plus a
+               subtle dark outer ring/soft shadow and a 1px lift for a polished interactive feel.
+               The primary green stays reserved for the submit button. */
+            background-color: #F1F5F1;
+            color: #101812;
+            border-color: #080D0A;
+            box-shadow:
+                0 0 0 2px rgba(8, 13, 10, 0.20),
+                0 4px 12px rgba(8, 13, 10, 0.10);
+            outline: none;
+            transform: translateY(-1px);
+            transition:
+                border-color 250ms ease,
+                box-shadow 250ms ease,
+                transform 250ms ease,
+                background-color 250ms ease;
         }
         /* Browser autofill (Chrome/Edge/Safari/Firefox) paints autofilled fields with its own
            UA fill, which no author background-color can override - only an inset box-shadow can
            hide it. `background-color` is kept for engines that do allow authors to override the
            fill (Firefox :autofill), while the inset box-shadow covers WebKit/Blink. The
-           autofilled fields therefore keep the same dark green/black background as the idle and
-           focused states, and the autofilled text stays readable. */
+           autofilled fields therefore keep the same light green-tinted background as the idle
+           and focused states, and the autofilled text stays dark and readable. */
         .form-input:-webkit-autofill,
         .form-input:-webkit-autofill:hover,
         form .form-input:-webkit-autofill,
@@ -226,49 +241,51 @@
         form .form-input:autofill {
             /* !important is required here because the engines apply their own autofill fill and
                text colour from their style sheets with !important. */
-            -webkit-text-fill-color: #f1f5f1;
-            caret-color: #f1f5f1;
-            color: #f1f5f1 !important;
-            background-color: #080D0A !important;
-            -webkit-box-shadow: inset 0 0 0 1000px #080D0A !important;
-            box-shadow: inset 0 0 0 1000px #080D0A !important;
-            border-color: rgba(255, 255, 255, 0.08);
+            -webkit-text-fill-color: #101812;
+            caret-color: #00C26E;
+            color: #101812 !important;
+            background-color: #E8EEE9 !important;
+            -webkit-box-shadow: inset 0 0 0 1000px #E8EEE9 !important;
+            box-shadow: inset 0 0 0 1000px #E8EEE9 !important;
+            border-color: rgba(16, 24, 18, 0.18);
         }
         .form-input:-webkit-autofill:focus,
         form .form-input:-webkit-autofill:focus,
         form .form-input:autofill:focus {
-            -webkit-box-shadow: inset 0 0 0 1000px #080D0A, 0 0 0 3px rgba(0, 194, 110, 0.12) !important;
-            box-shadow: inset 0 0 0 1000px #080D0A, 0 0 0 3px rgba(0, 194, 110, 0.12) !important;
-            border-color: #00c26e;
+            -webkit-box-shadow: inset 0 0 0 1000px #F1F5F1, 0 0 0 2px rgba(8, 13, 10, 0.20), 0 4px 12px rgba(8, 13, 10, 0.10) !important;
+            box-shadow: inset 0 0 0 1000px #F1F5F1, 0 0 0 2px rgba(8, 13, 10, 0.20), 0 4px 12px rgba(8, 13, 10, 0.10) !important;
+            border-color: #080D0A;
         }
         html.light-mode .form-input:-webkit-autofill,
         html.light-mode .form-input:-webkit-autofill:hover,
         html.light-mode .form-input:-webkit-autofill:focus {
-            -webkit-text-fill-color: #1a2a1a;
-            caret-color: #1a2a1a;
-            color: #1a2a1a !important;
-            background-color: #f4f8f5 !important;
-            -webkit-box-shadow: inset 0 0 0 1000px #f4f8f5 !important;
-            box-shadow: inset 0 0 0 1000px #f4f8f5 !important;
+            -webkit-text-fill-color: #101812;
+            caret-color: #00C26E;
+            color: #101812 !important;
+            background-color: #E8EEE9 !important;
+            -webkit-box-shadow: inset 0 0 0 1000px #E8EEE9 !important;
+            box-shadow: inset 0 0 0 1000px #E8EEE9 !important;
         }
         select.form-input {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a4b2a7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235E6B62' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1rem center;
             padding-right: 2.5rem;
         }
-        select.form-input option {
-            background-color: #151d17;
-            color: #f1f5f1;
+        select.form-input option,
+        .form-input option {
+            background-color: #E8EEE9;
+            color: #101812;
         }
 
-        /* Reveal animations */
+        /* Reveal animations (hero content entrance — matches work.html) */
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.65s var(--transition-fast), transform 0.65s var(--transition-fast);
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+            will-change: transform, opacity;
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         .step-card {
             transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
@@ -303,6 +320,25 @@
         }
         .light-mode footer {
             border-top-color: rgba(0, 0, 0, 0.08) !important;
+        }
+
+        /* Cinematic hero background motion.
+           Very slow, subtle zoom (1.05 -> 1.10) over 20s, alternating forever.
+           Pure scale only: no mouse/parallax interaction, no rapid movement, and the
+           image always keeps at least 2.5% bleed on every side so no gap can appear. */
+        @keyframes heroCinematic {
+            0% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        .hero-cinematic {
+            animation: heroCinematic 20s ease-in-out infinite alternate;
+            transform-origin: center center;
+            backface-visibility: hidden;
+            will-change: transform;
         }
     </style>
     <script id="tailwind-config">
@@ -382,7 +418,21 @@
 </head>
 
 <body class="bg-background text-on-background">
-
+<!-- Italian-inspired divider -->
+<div
+    class="w-full h-[5px]"
+    style="
+        background: linear-gradient(
+            90deg,
+            #008C45 0%,
+            #008C45 33.33%,
+            #F4F1E8 33.33%,
+            #F4F1E8 66.66%,
+            #CD212A 66.66%,
+            #CD212A 100%
+        );
+    "
+></div>
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-transparent" id="main-header">
         <div class="flex justify-between items-center max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300">
@@ -438,6 +488,19 @@
 
         <!-- SECTION 1: HERO -->
         <section class="relative py-24 md:py-32 px-margin-mobile md:px-margin-desktop bg-background overflow-hidden">
+            <!-- Hero background photo: full-width visual layer, kept at the bottom of the stack -->
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <img
+                    src="assets/images/contact-toplocalwebsites.webp"
+                    alt="Contact Top Local Websites"
+                    loading="eager"
+                    fetchpriority="high"
+                    class="hero-cinematic absolute inset-0 h-full w-full object-cover"
+                />
+            </div>
+            <!-- Dark gradient overlay above the photo so the hero copy stays readable -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#080D0A]/65 via-[#080D0A]/50 to-[#080D0A]/75 pointer-events-none"></div>
+
             <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/8 blur-[160px] rounded-full pointer-events-none"></div>
             <div class="absolute top-20 left-1/4 w-72 h-72 bg-primary/6 blur-[120px] rounded-full pointer-events-none"></div>
             <div class="absolute top-32 right-1/4 w-56 h-56 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
@@ -466,275 +529,369 @@
                 </div>
             </div>
         </section>
+        <!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
         <!-- SECTION 2: CONTACT FORM -->
-        <section id="contact-form-section" class="pt-10 md:pt-16 pb-20 md:pb-28 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest relative overflow-hidden">
-            <div class="absolute -top-32 right-0 w-96 h-96 bg-primary/5 blur-[130px] rounded-full pointer-events-none"></div>
-            <div class="max-w-[1280px] mx-auto">
+<section
+  id="contact-form-section"
+  class="bg-surface-container-lowest relative overflow-hidden py-10 md:py-16 pb-20 md:pb-28 px-margin-mobile md:px-margin-desktop"
+>
+  <div class="max-w-[1280px] mx-auto relative z-10">
 
-        <!-- TITLE & DESCRIPTION -->
-        <div class="text-center max-w-3xl mx-auto mb-10 reveal">
-            <h2 class="text-white text-[1.75rem] md:text-[2rem] font-semibold leading-[1.2] tracking-tight mb-3">
-                Send Us a Message Today
-            </h2>
-            <p class="text-on-surface-variant text-[0.9375rem] leading-[1.7]">
-                Complete the short form below and tell us a little about your business, your goals and what you need from your website. The more context you provide, the better we can recommend a suitable approach.
-            </p>
+    <!-- TITLE & DESCRIPTION -->
+    <div class="text-center max-w-3xl mx-auto mb-10 reveal">
+      <h2
+        class="text-white text-[1.75rem] md:text-[2rem] font-semibold leading-[1.2] tracking-tight mb-3"
+      >
+        Send Us a Message Today
+      </h2>
+
+      <p
+        class="text-white/85 text-[0.9375rem] leading-[1.7]"
+      >
+        Complete the short form below and tell us a little about your business,
+        your goals and what you need from your website. The more context you
+        provide, the better we can recommend a suitable approach.
+      </p>
+    </div>
+
+    <!-- WHAT HAPPENS NEXT - 3 Step Teaser -->
+    <div
+      class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 reveal"
+    >
+      <div
+        class="glass-surface rounded-2xl p-5 text-center border border-white/10 bg-[#080D0A]/70"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-lg flex items-center justify-center mx-auto mb-3"
+        >
+          1
         </div>
 
-        <!-- WHAT HAPPENS NEXT - 3 Step Teaser -->
-        <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 reveal">
-            <div class="glass-surface rounded-2xl p-5 text-center border border-white/5">
-                <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-lg flex items-center justify-center mx-auto mb-3">1</div>
-                <h3 class="text-white font-semibold text-[0.9375rem] mb-1">Tell Us Your Goals</h3>
-                <p class="text-on-surface-variant text-[0.8rem] leading-[1.5]">Share your business details, website requirements and priorities through the form.</p>
-            </div>
-            <div class="glass-surface rounded-2xl p-5 text-center border border-white/5">
-                <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-lg flex items-center justify-center mx-auto mb-3">2</div>
-                <h3 class="text-white font-semibold text-[0.9375rem] mb-1">Discuss Your Needs</h3>
-                <p class="text-on-surface-variant text-[0.8rem] leading-[1.5]">We’ll review your message and, where useful, arrange a short conversation to clarify the project.</p>
-            </div>
-            <div class="glass-surface rounded-2xl p-5 text-center border border-white/5">
-                <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-lg flex items-center justify-center mx-auto mb-3">3</div>
-                <h3 class="text-white font-semibold text-[0.9375rem] mb-1">Receive a Clear Proposal</h3>
-                <p class="text-on-surface-variant text-[0.8rem] leading-[1.5]">We’ll recommend a suitable package or approach based on your requirements, with transparent pricing and next steps.</p>
-            </div>
+        <h3 class="text-white font-semibold text-[0.9375rem] mb-1">
+          Tell Us Your Goals
+        </h3>
+
+        <p
+          class="text-white/75 text-[0.8rem] leading-[1.5]"
+        >
+          Share your business details, website requirements and priorities through the form.
+        </p>
+      </div>
+
+      <div
+        class="glass-surface rounded-2xl p-5 text-center border border-white/10 bg-[#080D0A]/70"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-lg flex items-center justify-center mx-auto mb-3"
+        >
+          2
         </div>
 
-        <!-- FORM - Centered -->
-<div class="max-w-3xl mx-auto reveal">
-    <div class="glass-surface rounded-3xl p-8 md:p-10">
+        <h3 class="text-white font-semibold text-[0.9375rem] mb-1">
+          Discuss Your Needs
+        </h3>
+
+        <p
+          class="text-white/75 text-[0.8rem] leading-[1.5]"
+        >
+          We’ll review your message and, where useful, arrange a short conversation to clarify the project.
+        </p>
+      </div>
+
+      <div
+        class="glass-surface rounded-2xl p-5 text-center border border-white/10 bg-[#080D0A]/70"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-lg flex items-center justify-center mx-auto mb-3"
+        >
+          3
+        </div>
+
+        <h3 class="text-white font-semibold text-[0.9375rem] mb-1">
+          Receive a Clear Proposal
+        </h3>
+
+        <p
+          class="text-white/75 text-[0.8rem] leading-[1.5]"
+        >
+          We’ll recommend a suitable package or approach based on your requirements, with transparent pricing and next steps.
+        </p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="max-w-3xl mx-auto reveal">
+      <div
+        class="relative overflow-hidden rounded-3xl p-8 md:p-10 border border-white/10 shadow-[0_25px_90px_rgba(0,0,0,0.38)] backdrop-blur-sm"
+        style="
+          background:
+            linear-gradient(
+              90deg,
+              #0b5d3b 0%,
+              #174d36 28%,
+              #f4f1e8 50%,
+              #8f343d 72%,
+              #8f1f2b 100%
+            );
+        "
+      >
+        <!-- Dark readability overlay -->
+        <div
+          class="absolute inset-0 bg-[#080D0A]/70 pointer-events-none"
+        ></div>
+
         <form
-            id="contact-form"
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="space-y-6"
-            novalidate
+          id="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-6 relative z-10"
+          novalidate
         >
 
-            <!-- NETLIFY HONEYPOT (hidden from humans & screen readers) -->
-            <p class="hidden">
-                <label>
-                    Don’t fill this out if you’re human:
-                    <input name="bot-field" />
-                </label>
-            </p>
+          <!-- NETLIFY HONEYPOT -->
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human:
+              <input name="bot-field" />
+            </label>
+          </p>
 
-            <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact" />
 
-            <!-- NAME & EMAIL -->
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                    <label
-                        for="full-name"
-                        class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                    >
-                        Full Name <span class="text-primary">*</span>
-                    </label>
-
-                    <input
-                        id="full-name"
-                        name="full-name"
-                        type="text"
-                        required
-                        placeholder="John Smith"
-                        class="form-input"
-                        autocomplete="name"
-                    />
-                </div>
-
-                <div>
-                    <label
-                        for="email"
-                        class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                    >
-                        Email Address <span class="text-primary">*</span>
-                    </label>
-
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="john@email.com"
-                        class="form-input"
-                        autocomplete="email"
-                    />
-                </div>
-            </div>
-
-            <!-- PHONE & BUSINESS -->
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                    <label
-                        for="phone"
-                        class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                    >
-                        Phone Number
-                        <span class="text-on-surface-variant font-normal">(optional)</span>
-                    </label>
-
-                    <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+44 7123 456789"
-                        class="form-input"
-                        autocomplete="tel"
-                    />
-                </div>
-
-                <div>
-                    <label
-                        for="business-name"
-                        class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                    >
-                        Business Name
-                        <span class="text-on-surface-variant font-normal">(optional)</span>
-                    </label>
-
-                    <input
-                        id="business-name"
-                        name="business-name"
-                        type="text"
-                        placeholder="Smith Plumbing Ltd"
-                        class="form-input"
-                        autocomplete="organization"
-                    />
-                </div>
-            </div>
-
-            <!-- CURRENT WEBSITE -->
+          <!-- NAME & EMAIL -->
+          <div class="grid sm:grid-cols-2 gap-6">
             <div>
-                <label
-                    for="current-website"
-                    class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                >
-                    Current Website URL
-                    <span class="text-on-surface-variant font-normal">(optional)</span>
-                </label>
+              <label
+                for="full-name"
+                class="block text-white text-[0.875rem] font-semibold mb-2"
+              >
+                Full Name <span class="text-primary">*</span>
+              </label>
 
-                <input
-                    id="current-website"
-                    name="current-website"
-                    type="url"
-                    placeholder="https://www.yourwebsite.com"
-                    class="form-input"
-                    autocomplete="url"
-                />
+              <input
+                id="full-name"
+                name="full-name"
+                type="text"
+                required
+                placeholder="John Smith"
+                class="form-input"
+                autocomplete="name"
+              />
             </div>
 
-            <!-- CONTACT PREFERENCES -->
-            <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                    <label
-                        for="preferred-day"
-                        class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                    >
-                        Preferred Contact Day
-                        <span class="text-on-surface-variant font-normal">(optional)</span>
-                    </label>
-
-                    <select id="preferred-day" name="preferred-day" class="form-input">
-                        <option value="" selected>Select a day</option>
-                        <option value="monday">Monday</option>
-                        <option value="tuesday">Tuesday</option>
-                        <option value="wednesday">Wednesday</option>
-                        <option value="thursday">Thursday</option>
-                        <option value="friday">Friday</option>
-                        <option value="weekend">Weekend (Sat/Sun)</option>
-                        <option value="anyday">Any Day</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label
-                        for="best-time"
-                        class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                    >
-                        Best Time to Contact
-                        <span class="text-on-surface-variant font-normal">(optional)</span>
-                    </label>
-
-                    <select id="best-time" name="best-time" class="form-input">
-                        <option value="" selected>Select a time</option>
-                        <option value="morning">Morning (9am – 12pm)</option>
-                        <option value="afternoon">Afternoon (12pm – 5pm)</option>
-                        <option value="evening">Evening (5pm – 8pm)</option>
-                        <option value="anytime">Anytime</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- SERVICE -->
             <div>
-                <label
-                    for="service"
-                    class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                >
-                    How Can We Help?
-                    <span class="text-on-surface-variant font-normal">(optional)</span>
-                </label>
+              <label
+                for="email"
+                class="block text-white text-[0.875rem] font-semibold mb-2"
+              >
+                Email Address <span class="text-primary">*</span>
+              </label>
 
-                <select id="service" name="service" class="form-input">
-                    <option value="" selected>Select a service</option>
-                    <option value="consultation">Free Consultation</option>
-                    <option value="new-website">New Website</option>
-                    <option value="redesign">Website Redesign</option>
-                    <option value="seo">Local SEO &amp; AI Search</option>
-                    <option value="gbp">Google Business Profile Setup</option>
-                    <option value="hosting">Hosting &amp; Website Care</option>
-                    <option value="social">Social Media Kits</option>
-                    <option value="video">Promotional Videos</option>
-                    <option value="other">Other</option>
-                </select>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="john@email.com"
+                class="form-input"
+                autocomplete="email"
+              />
             </div>
+          </div>
 
-            <!-- PROJECT DETAILS -->
+          <!-- PHONE & BUSINESS -->
+          <div class="grid sm:grid-cols-2 gap-6">
             <div>
-                <label
-                    for="project-details"
-                    class="block text-on-surface text-[0.875rem] font-semibold mb-2"
-                >
-                    Tell Us About Your Project
-                </label>
+              <label
+                for="phone"
+                class="block text-white text-[0.875rem] font-semibold mb-2"
+              >
+                Phone Number
+                <span class="text-white/55 font-normal">(optional)</span>
+              </label>
 
-                <textarea
-                    id="project-details"
-                    name="project-details"
-                    rows="5"
-                    placeholder="Tell us about your business, what you need and what you would like to improve..."
-                    class="form-input resize-none"
-                ></textarea>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+44 7123 456789"
+                class="form-input"
+                autocomplete="tel"
+              />
             </div>
 
-            <!-- PRIVACY NOTE -->
-            <p class="text-on-surface-variant text-[0.75rem] leading-[1.5] text-center max-w-2xl mx-auto">
-                By submitting this form, you agree that we may use your information to respond to your enquiry.
-                Please see our
-                <a
-                    href="privacy.html"
-                    class="text-primary hover:underline"
-                >
-                    Privacy Policy
-                </a>
-                for more information.
-            </p>
+            <div>
+              <label
+                for="business-name"
+                class="block text-white text-[0.875rem] font-semibold mb-2"
+              >
+                Business Name
+                <span class="text-white/55 font-normal">(optional)</span>
+              </label>
 
-            <!-- BUTTON -->
-            <div class="flex justify-center">
-                <button
-                    type="submit"
-                    class="w-full sm:w-auto bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-[0.9375rem] tracking-wide transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,194,110,0.45)] hover:-translate-y-[3px] active:scale-95"
-                >
-                    SEND MY ENQUIRY &#8594;
-                </button>
+              <input
+                id="business-name"
+                name="business-name"
+                type="text"
+                placeholder="Smith Plumbing Ltd"
+                class="form-input"
+                autocomplete="organization"
+              />
             </div>
+          </div>
+
+          <!-- CURRENT WEBSITE -->
+          <div>
+            <label
+              for="current-website"
+              class="block text-white text-[0.875rem] font-semibold mb-2"
+            >
+              Current Website URL
+              <span class="text-white/55 font-normal">(optional)</span>
+            </label>
+
+            <input
+              id="current-website"
+              name="current-website"
+              type="url"
+              placeholder="https://www.yourwebsite.com"
+              class="form-input"
+              autocomplete="url"
+            />
+          </div>
+
+          <!-- CONTACT PREFERENCES -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="preferred-day"
+                class="block text-white text-[0.875rem] font-semibold mb-2"
+              >
+                Preferred Contact Day
+                <span class="text-white/55 font-normal">(optional)</span>
+              </label>
+
+              <select
+                id="preferred-day"
+                name="preferred-day"
+                class="form-input"
+              >
+                <option value="" selected>Select a day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="weekend">Weekend (Sat/Sun)</option>
+                <option value="anyday">Any Day</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="best-time"
+                class="block text-white text-[0.875rem] font-semibold mb-2"
+              >
+                Best Time to Contact
+                <span class="text-white/55 font-normal">(optional)</span>
+              </label>
+
+              <select
+                id="best-time"
+                name="best-time"
+                class="form-input"
+              >
+                <option value="" selected>Select a time</option>
+                <option value="morning">Morning (9am – 12pm)</option>
+                <option value="afternoon">Afternoon (12pm – 5pm)</option>
+                <option value="evening">Evening (5pm – 8pm)</option>
+                <option value="anytime">Anytime</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SERVICE -->
+          <div>
+            <label
+              for="service"
+              class="block text-white text-[0.875rem] font-semibold mb-2"
+            >
+              How Can We Help?
+              <span class="text-white/55 font-normal">(optional)</span>
+            </label>
+
+            <select
+              id="service"
+              name="service"
+              class="form-input"
+            >
+              <option value="" selected>Select a service</option>
+              <option value="consultation">Free Consultation</option>
+              <option value="new-website">New Website</option>
+              <option value="redesign">Website Redesign</option>
+              <option value="seo">Local SEO &amp; AI Search</option>
+              <option value="gbp">Google Business Profile Setup</option>
+              <option value="hosting">Hosting &amp; Website Care</option>
+              <option value="social">Social Media Kits</option>
+              <option value="video">Promotional Videos</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- PROJECT DETAILS -->
+          <div>
+            <label
+              for="project-details"
+              class="block text-white text-[0.875rem] font-semibold mb-2"
+            >
+              Tell Us About Your Project
+            </label>
+
+            <textarea
+              id="project-details"
+              name="project-details"
+              rows="5"
+              placeholder="Tell us about your business, what you need and what you would like to improve..."
+              class="form-input resize-none"
+            ></textarea>
+          </div>
+
+          <!-- PRIVACY NOTE -->
+          <p
+            class="text-white/65 text-[0.75rem] leading-[1.5] text-center max-w-2xl mx-auto"
+          >
+            By submitting this form, you agree that we may use your information to respond to your enquiry.
+            Please see our
+            <a
+              href="privacy.html"
+              class="text-primary hover:underline"
+            >
+              Privacy Policy
+            </a>
+            for more information.
+          </p>
+
+          <!-- BUTTON -->
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              class="w-full sm:w-auto bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-[0.9375rem] tracking-wide transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,194,110,0.45)] hover:-translate-y-[3px] active:scale-95"
+            >
+              SEND MY ENQUIRY &#8594;
+            </button>
+          </div>
 
         </form>
+      </div>
     </div>
-</div>
+
+  </div>
+</section>
 
                 <!-- SUCCESS MESSAGE -->
                 <div id="form-success" class="hidden mt-8 p-8 rounded-2xl border border-primary/25 bg-primary/8 text-center">
@@ -748,6 +905,10 @@
         </div>
     </div>
 </section>
+   <!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
     <!-- Footer -->
     <footer class="bg-surface-container-lowest w-full pt-16 border-t border-white/5">
         <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
@@ -758,7 +919,7 @@
                         <span class="font-black tracking-tight text-[1.25rem] leading-[1.6]"><span class="text-[#2ecc71]">TOP</span><span class="text-white">LOCAL</span><span class="text-[#e74c3c]">WEBSITES</span></span>
                     </div>
                     <p class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6] max-w-sm">Modern websites for local businesses that want more visibility, more customers, and a stronger online presence.</p>
-                    <p class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic">Helping Local Businesses Grow Online</p>
+                    <p class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"><u>Helping Local Businesses Grow Online</u> 🙂</p>
                 </div>
                 <div class="md:col-span-2">
                     <h4 class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]">Company</h4>
@@ -796,9 +957,9 @@
         </div>
         <div style="background-color: #252A27">
             <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-                <div class="border-t border-white/5 pt-6 pb-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 items-center text-[0.8125rem] text-on-surface-variant">
-                    <p class="text-center md:col-span-9">&copy; 2026 Top Local Websites. All rights reserved.</p>
-                    <div class="flex items-center gap-4 justify-center md:justify-start md:col-span-3">
+                <div class="border-t border-white/5 pt-3 pb-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 text-[0.8125rem] text-on-surface-variant">
+                    <p class="italic whitespace-nowrap">&copy; 2026 Top Local Websites. All rights reserved.</p>
+                    <div class="flex flex-wrap items-center gap-6 whitespace-nowrap">
                     <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
                     <a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a>
                     <a href="cookies.html" class="hover:text-primary transition-colors">Cookies Policy</a>
@@ -834,7 +995,7 @@
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add('active');
                     revealObserver.unobserve(entry.target);
                 }
             });
@@ -945,6 +1106,35 @@
                 form.appendChild(submitError);
             }
         });
+    </script>
+    <!-- Back to top -->
+    <button
+      class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex h-[42px] w-[42px] md:h-11 md:w-11 items-center justify-center rounded-full border border-white/20 bg-primary text-on-primary shadow-[0_0_20px_rgba(0,194,110,0.35)] opacity-0 invisible pointer-events-none transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <span class="material-symbols-outlined text-xl leading-none"
+        >arrow_upward</span
+      >
+    </button>
+    <script>
+      (function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (!backToTop) return;
+        const updateBackToTop = () => {
+          const show = window.scrollY > 400;
+          backToTop.classList.toggle("opacity-0", !show);
+          backToTop.classList.toggle("invisible", !show);
+          backToTop.classList.toggle("pointer-events-none", !show);
+        };
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        window.addEventListener("load", updateBackToTop);
+        updateBackToTop();
+      })();
     </script>
 </body>
 

@@ -23,7 +23,7 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #080D0A;
+        background-color: #080d0a;
         color: #f1f5f1;
         overflow-x: hidden;
         font-size: 16px;
@@ -99,6 +99,19 @@
         to {
           width: 100%;
         }
+      }
+      /* Cinematic hero background motion */
+      @keyframes heroCinematic {
+        0% {
+          transform: scale(1.05) translate3d(0, 0, 0);
+        }
+        100% {
+          transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+        }
+      }
+      .hero-cinematic {
+        animation: heroCinematic 22s ease-in-out infinite alternate;
+        will-change: transform;
       }
     </style>
     <script id="tailwind-config">
@@ -177,6 +190,21 @@
     </script>
   </head>
   <body class="bg-background text-on-background">
+    <!-- Italian-inspired divider -->
+    <div
+      class="w-full h-[5px]"
+      style="
+        background: linear-gradient(
+          90deg,
+          #008c45 0%,
+          #008c45 33.33%,
+          #f4f1e8 33.33%,
+          #f4f1e8 66.66%,
+          #cd212a 66.66%,
+          #cd212a 100%
+        );
+      "
+    ></div>
     <!-- TopNavBar -->
     <header
       class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-transparent"
@@ -308,14 +336,14 @@
           <img
             src="assets/images/local-seo-web-design-business-growth.webp"
             alt="Local business growth through web design"
-            class="w-full h-full object-cover"
+            class="hero-cinematic w-full h-full object-cover"
           />
           <div class="absolute inset-0 bg-[#080D0A]/75"></div>
         </div>
         <div
           class="relative z-10 w-full px-margin-mobile md:px-margin-desktop py-12"
         >
-          <div class="max-w-[900px]">
+          <div class="max-w-[900px] reveal">
             <div class="mb-stack-md">
               <div
                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5"
@@ -357,7 +385,8 @@
           </div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- WHY YOUR WEBSITE MATTERS (detailed stats) -->
       <section
         class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest relative overflow-hidden reveal"
@@ -540,13 +569,15 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-group"
           >
             <div
-              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
+              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
               <span
                 class="material-symbols-outlined text-primary text-4xl mb-4 block"
                 >language</span
               >
-              <div class="text-white text-3xl font-extrabold mb-1">
+              <div
+                class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
+              >
                 10+ Years
               </div>
               <div class="text-white font-medium text-sm mb-2">
@@ -557,13 +588,17 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
+              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
               <span
                 class="material-symbols-outlined text-primary text-4xl mb-4 block"
                 >smartphone</span
               >
-              <div class="text-white text-3xl font-extrabold mb-1">100%</div>
+              <div
+                class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
+              >
+                100%
+              </div>
               <div class="text-white font-medium text-sm mb-2">
                 Responsive Design
               </div>
@@ -573,13 +608,17 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
+              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
               <span
                 class="material-symbols-outlined text-primary text-4xl mb-4 block"
                 >bolt</span
               >
-              <div class="text-white text-3xl font-extrabold mb-1">Fast</div>
+              <div
+                class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
+              >
+                Fast
+              </div>
               <div class="text-white font-medium text-sm mb-2">
                 Turnaround Times
               </div>
@@ -588,13 +627,15 @@
               </p>
             </div>
             <div
-              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
+              class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
               <span
                 class="material-symbols-outlined text-primary text-4xl mb-4 block"
                 >travel_explore</span
               >
-              <div class="text-white text-3xl font-extrabold mb-1">
+              <div
+                class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
+              >
                 Built for
               </div>
               <div class="text-white font-medium text-sm mb-2">
@@ -939,7 +980,8 @@
           </div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- INDUSTRIES WE WORK WITH (fully restored) -->
       <section
         class="py-24 px-margin-mobile md:px-margin-desktop bg-background relative overflow-hidden"
@@ -1165,7 +1207,7 @@
             <h2
               class="text-white text-[2rem] md:text-[2.5rem] font-semibold leading-[1.3] tracking-tight mb-4"
             >
-              A Simple Process Designed Around Your Business
+              A Simple Process That Fits Your Business
             </h2>
             <div class="w-24 h-1 bg-primary mx-auto rounded-full my-6"></div>
             <p
@@ -1187,10 +1229,10 @@
               ></div>
             </div>
             <div
-              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_0_35px_rgba(0,194,110,0.18)] transition-all duration-300 reveal-item"
+              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_40px_rgba(0,194,110,0.14)] transition-all duration-[400ms] ease-out reveal-item"
             >
               <div
-                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-110 transition-transform duration-300"
+                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(0,194,110,0.35)] transition-all duration-[400ms] ease-out"
               >
                 1
               </div>
@@ -1204,10 +1246,10 @@
               </p>
             </div>
             <div
-              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_0_35px_rgba(0,194,110,0.18)] transition-all duration-300 reveal-item"
+              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_40px_rgba(0,194,110,0.14)] transition-all duration-[400ms] ease-out reveal-item"
             >
               <div
-                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-110 transition-transform duration-300"
+                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(0,194,110,0.35)] transition-all duration-[400ms] ease-out"
               >
                 2
               </div>
@@ -1221,10 +1263,10 @@
               </p>
             </div>
             <div
-              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_0_35px_rgba(0,194,110,0.18)] transition-all duration-300 reveal-item"
+              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_40px_rgba(0,194,110,0.14)] transition-all duration-[400ms] ease-out reveal-item"
             >
               <div
-                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-110 transition-transform duration-300"
+                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(0,194,110,0.35)] transition-all duration-[400ms] ease-out"
               >
                 3
               </div>
@@ -1237,10 +1279,10 @@
               </p>
             </div>
             <div
-              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_0_35px_rgba(0,194,110,0.18)] transition-all duration-300 reveal-item"
+              class="group glass-surface p-8 rounded-2xl text-left hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_40px_rgba(0,194,110,0.14)] transition-all duration-[400ms] ease-out reveal-item"
             >
               <div
-                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-110 transition-transform duration-300"
+                class="text-primary text-[3rem] font-extrabold mb-4 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(0,194,110,0.35)] transition-all duration-[400ms] ease-out"
               >
                 4
               </div>
@@ -1517,17 +1559,13 @@
           </div>
         </div>
       </section>
-
+      <!-- Soft white divider -->
+      <div class="w-full h-px bg-[#DDE5DF]/50"></div>
       <!-- FINAL CTA SECTION -->
       <section
-        class="relative w-full py-20 md:py-28 overflow-hidden group reveal"
+        class="relative w-full py-16 md:py-20 overflow-hidden group reveal"
       >
-        <div
-          class="pointer-events-none absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
-        ></div>
-        <div
-          class="pointer-events-none absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"
-        ></div>
+        <!-- Background image -->
         <div class="absolute inset-0 -z-20 overflow-hidden">
           <img
             src="assets/images/affordable-webdesign-pricing-local-business.webp"
@@ -1535,45 +1573,47 @@
             class="w-full h-full object-cover scale-110 transition-transform duration-[6000ms] ease-out group-hover:scale-105"
           />
         </div>
+
+        <!-- Dark overlay -->
         <div
           class="absolute inset-0 bg-gradient-to-b from-[#080D0A]/70 via-[#080D0A]/55 to-[#080D0A]/75 -z-10"
         ></div>
+
+        <!-- Main CTA container -->
         <div
-          class="absolute -top-32 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"
-        ></div>
-        <div
-          class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 blur-[140px] rounded-full"
-        ></div>
-        <div
-          class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10"
+          class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10"
         >
+          <!-- Framed CTA -->
           <div
-            class="relative rounded-3xl border border-white/15 p-10 md:p-14 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_35px_120px_rgba(0,194,110,0.18)] overflow-hidden"
+            class="relative rounded-3xl border border-white/15 px-8 py-10 md:px-12 md:py-12 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] overflow-hidden"
           >
-            <div
-              class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            ></div>
-            <div class="relative z-10">
+            <!-- CTA content -->
+            <div class="max-w-3xl mx-auto text-center">
+              <!-- Badge -->
               <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-6"
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-5"
               >
-                <span class="w-2 h-2 rounded-full bg-primary"></span
-                ><span
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span
                   class="text-primary font-bold uppercase tracking-[0.25em] text-[0.72rem]"
-                  >GET STARTED</span
                 >
+                  Ready for more local customers?
+                </span>
               </div>
+              <!-- Heading -->
               <h2
-                class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-6"
+                class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-5"
               >
-                Ready for More Local Customers?
+                Turn Your Website Into a Customer-Getting Tool
               </h2>
+
+              <!-- Description -->
               <p
-                class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-10"
+                class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-8"
               >
-                Stop letting your website sit idle. Turn it into a machine that
-                brings customers automatically — while you focus on your
-                business. Let's build it.
+                Don’t let your website sit idle. Turn it into a powerful tool
+                for attracting new customers while you stay focused on running
+                your business. Let’s build it.
               </p>
               <button
                 onclick="window.location.href = 'contact.html'"
@@ -1581,7 +1621,7 @@
               >
                 GET A FREE QUOTE
               </button>
-              <p class="text-white/40 text-[0.85rem] mt-8 tracking-wide">
+              <p class="text-white/40 text-[0.85rem] mt-6 tracking-wide">
                 Starting from €790 • No contracts • Delivered in days, not weeks
               </p>
             </div>
@@ -1589,7 +1629,8 @@
         </div>
       </section>
     </main>
-
+    <!-- Soft white divider -->
+    <div class="w-full h-px bg-[#DDE5DF]/50"></div>
     <!-- Footer (same as original, cleaned) -->
     <footer
       class="bg-surface-container-lowest w-full pt-16 border-t border-white/5"
@@ -1618,7 +1659,7 @@
             <p
               class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"
             >
-              Helping Local Businesses Grow Online
+              <u>Helping Local Businesses Grow Online</u> 🙂
             </p>
           </div>
           <div class="md:col-span-2">
@@ -1764,20 +1805,28 @@
           </div>
         </div>
       </div>
-      <div style="background-color: #252A27">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div style="background-color: #252a27">
+        <div
+          class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop"
+        >
           <div
-            class="border-t border-white/5 pt-6 pb-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 items-center text-[0.8125rem] text-on-surface-variant"
+            class="border-t border-white/5 pt-3 pb-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 text-[0.8125rem] text-on-surface-variant"
           >
-            <p class="text-center md:col-span-9">&copy; 2026 Top Local Websites. All rights reserved.</p>
-            <div class="flex items-center gap-4 justify-center md:justify-start md:col-span-3">
-            <a href="privacy.html" class="hover:text-primary transition-colors"
-              >Privacy Policy</a
-            ><a href="terms.html" class="hover:text-primary transition-colors"
-              >Terms of Service</a
-            ><a href="cookies.html" class="hover:text-primary transition-colors"
-              >Cookies Policy</a
-            >
+            <p class="italic whitespace-nowrap">
+              &copy; 2026 Top Local Websites. All rights reserved.
+            </p>
+            <div class="flex flex-wrap items-center gap-6 whitespace-nowrap">
+              <a
+                href="privacy.html"
+                class="hover:text-primary transition-colors"
+                >Privacy Policy</a
+              ><a href="terms.html" class="hover:text-primary transition-colors"
+                >Terms of Service</a
+              ><a
+                href="cookies.html"
+                class="hover:text-primary transition-colors"
+                >Cookies Policy</a
+              >
             </div>
           </div>
         </div>
@@ -1919,6 +1968,35 @@
       );
       leftReveal.forEach((el) => dirObserver.observe(el));
       rightReveal.forEach((el) => dirObserver.observe(el));
+    </script>
+    <!-- Back to top -->
+    <button
+      class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex h-[42px] w-[42px] md:h-11 md:w-11 items-center justify-center rounded-full border border-white/20 bg-primary text-on-primary shadow-[0_0_20px_rgba(0,194,110,0.35)] opacity-0 invisible pointer-events-none transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <span class="material-symbols-outlined text-xl leading-none"
+        >arrow_upward</span
+      >
+    </button>
+    <script>
+      (function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (!backToTop) return;
+        const updateBackToTop = () => {
+          const show = window.scrollY > 400;
+          backToTop.classList.toggle("opacity-0", !show);
+          backToTop.classList.toggle("invisible", !show);
+          backToTop.classList.toggle("pointer-events-none", !show);
+        };
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        window.addEventListener("load", updateBackToTop);
+        updateBackToTop();
+      })();
     </script>
   </body>
 </html>

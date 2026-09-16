@@ -220,6 +220,32 @@
         section {
             scroll-margin-top: 80px;
         }
+
+        /* Cinematic hero background motion */
+        @keyframes heroCinematic {
+            0% {
+                transform: scale(1.05) translate3d(0, 0, 0);
+            }
+            100% {
+                transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+            }
+        }
+        .hero-cinematic {
+            animation: heroCinematic 22s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        /* Entrance Animations (hero content entrance — matches work.html) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+            will-change: transform, opacity;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -348,37 +374,93 @@
             <button onclick="window.location.href='contact.html'" class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-all duration-300 mt-4 text-[1rem] leading-[1.6]">Book a Call</button>
         </div>
     </header>
-
+<!-- Italian-inspired divider -->
+<div
+    class="w-full h-[5px]"
+    style="
+        background: linear-gradient(
+            90deg,
+            #008C45 0%,
+            #008C45 33.33%,
+            #F4F1E8 33.33%,
+            #F4F1E8 66.66%,
+            #CD212A 66.66%,
+            #CD212A 100%
+        );
+    "
+></div>
     <main class="pt-20">
-        <!-- SECTION 1 — HERO -->
-        <section class="relative min-h-[60vh] flex items-center overflow-hidden bg-[#080D0A]">
-            <div class="absolute inset-0 z-0">
-                <img src="assets/images/about-toplocalwebsites.webp" fetchpriority="high" loading="eager" alt="About Top Local Websites" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-[#080D0A]/60"></div>
-            </div>
-            <div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop py-12">
-                <div class="max-w-[900px] text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-stack-md">
-                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        <span class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]">ABOUT TOP LOCAL WEBSITES</span>
-                    </div>
-                    <h1 class="mb-stack-md text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.2] tracking-tight text-white">
-    Who We Are &amp; <span class="text-primary">What We Believe</span>
-</h1>
-                    <p class="mb-stack-lg text-[0.9375rem] md:text-[1.05rem] leading-[1.6] text-white/80 max-w-[650px]">TopLocalWebsites is an independent web design studio helping local businesses build fast, professional and search-friendly websites that make it easier for customers to discover, understand and contact them. We believe great websites should be simple, transparent and built around real business needs — without unnecessary complexity.</p>
-                    <button onclick="window.location.href='contact.html'" class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,194,110,0.5)]">BOOK A FREE CALL</button>
-                </div>
-            </div>
-        </section>
+       <!-- SECTION 1 — HERO -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#080D0A]">
 
+    <!-- Background image -->
+    <div class="absolute inset-0 z-0">
+        <img
+            src="assets/images/about-toplocalwebsites.webp"
+            fetchpriority="high"
+            loading="eager"
+            alt="About Top Local Websites"
+            class="hero-cinematic w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#080D0A]/60"></div>
+    </div>
+
+    <!-- Centered hero content -->
+    <div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop py-12">
+        <div class="max-w-[900px] mx-auto text-center reveal">
+
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-stack-md">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-primary font-bold uppercase tracking-widest text-[0.75rem] leading-[1.6]">
+                    ABOUT TOP LOCAL WEBSITES
+                </span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="mb-stack-md text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.2] tracking-tight text-white">
+                Who We Are &amp; <span class="text-primary">What We Believe</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="mb-stack-lg text-[0.9375rem] md:text-[1.05rem] leading-[1.6] text-white/80 max-w-[650px] mx-auto">
+                TopLocalWebsites is an independent web design studio helping local businesses build fast, professional and search-friendly websites that make it easier for customers to discover, understand and contact them. We believe great websites should be simple, transparent and built around real business needs — without unnecessary complexity.
+            </p>
+
+            <!-- CTA -->
+            <button
+                onclick="window.location.href='contact.html'"
+                class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,194,110,0.5)]"
+            >
+                BOOK A FREE CALL
+            </button>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
+        <!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
         <!-- SECTION 2 — OUR STORY -->
         <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-background">
             <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
                 <!-- Left: Image -->
                 <div class="md:col-span-5 relative group">
-                    <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-transparent shadow-[0_25px_60px_rgba(0,0,0,0.45)] transition-all duration-500 group-hover:scale-[1.01]">
-                        <img src="assets/images/founder-toplocalwebsites.webp" loading="lazy" alt="Davide Lucci — Founder of Top Local Websites" class="block w-full h-auto object-cover aspect-[4/5]" />
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-transparent shadow-[0_25px_60px_rgba(0,0,0,0.45)] transition-all duration-500 group-hover:scale-[1.01] w-[85%] mx-auto">
+                        <img src="assets/images/davide-lucci-top-local-websites.webp" loading="lazy" alt="Davide Lucci — Founder of Top Local Websites" class="block w-full h-auto object-cover aspect-[4/5]" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
+                        <!-- Founder overlay -->
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/70 via-background/25 to-transparent px-5 pt-10 pb-5 md:px-6 md:pb-6">
+                            <p class="text-white text-[1rem] md:text-[1.125rem] font-semibold leading-tight drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">Davide Lucci</p>
+                            <p class="text-white/75 text-[0.8125rem] md:text-[0.875rem] leading-tight mt-1">Founder of TopLocalWebsites.com</p>
+                        </div>
                     </div>
                     <!-- Ambient Glow -->
                     <div class="absolute -top-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10"></div>
@@ -600,30 +682,34 @@
 
     </div>
 </section>
-
+        <!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
         <!-- SECTION 7 — FINAL CTA -->
         <section
-            class="relative w-full py-20 md:py-28 overflow-hidden group"
+            class="relative w-full py-16 md:py-20 overflow-hidden group"
         >
 
-            <!-- Background image layer -->
-            <div class="absolute inset-0 z-0 overflow-hidden">
-                <img src="assets/images/about-page-cta-workspace.webp" loading="lazy" alt="Call to action background" class="w-full h-full object-cover opacity-100 scale-110 transition-transform duration-[6000ms] ease-out group-hover:scale-105" />
+            <!-- Background image -->
+            <div class="absolute inset-0 -z-20 overflow-hidden">
+                <img src="assets/images/about-page-cta-workspace.webp" loading="lazy" alt="Call to action background" class="w-full h-full object-cover scale-110 transition-transform duration-[6000ms] ease-out group-hover:scale-105" />
             </div>
 
-            <!-- Dark overlay layer -->
-            <div class="absolute inset-0 z-10 bg-[#080D0A]/50"></div>
+            <!-- Dark overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#080D0A]/70 via-[#080D0A]/55 to-[#080D0A]/75 -z-10"></div>
 
-            <!-- Centered content container -->
-            <div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-20">
+            <!-- Main CTA container -->
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
 
-                <!-- Framed inner CTA container -->
-                <div class="relative rounded-3xl border border-white/15 p-10 md:p-14 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] overflow-hidden">
+                <!-- Framed CTA -->
+                <div class="relative rounded-3xl border border-white/15 px-8 py-10 md:px-12 md:py-12 bg-transparent shadow-[0_25px_90px_rgba(0,0,0,0.35)] overflow-hidden">
 
-                    <div class="relative z-10">
+                    <!-- CTA content -->
+                    <div class="max-w-3xl mx-auto text-center">
 
                         <!-- Badge -->
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 mb-5">
                             <span class="w-2 h-2 rounded-full bg-primary"></span>
                             <span class="text-primary font-bold uppercase tracking-[0.25em] text-[0.72rem]">
                                 LET'S BUILD YOUR WEBSITE
@@ -631,12 +717,12 @@
                         </div>
 
                         <!-- Heading -->
-                        <h2 class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-6">
+                        <h2 class="text-white text-[2.2rem] md:text-[3.2rem] font-semibold leading-[1.1] tracking-tight mb-5">
                             Ready for a Better Website?
                         </h2>
 
                         <!-- Paragraph -->
-                        <p class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-10">
+                        <p class="text-on-surface-variant text-[1.05rem] md:text-[1.2rem] leading-relaxed max-w-2xl mx-auto mb-8">
                             Launch your business or upgrade your outdated website with a fast, professional online presence built around your needs.
                         </p>
 
@@ -649,7 +735,7 @@
                         </button>
 
                         <!-- Supporting text -->
-                        <p class="text-white/40 text-[0.85rem] mt-8 tracking-wide">
+                        <p class="text-white/40 text-[0.85rem] mt-6 tracking-wide">
                             Starting from €790 • Delivered in 7–10 days • No hidden fees
                         </p>
 
@@ -660,7 +746,12 @@
             </div>
 
         </section>
-
+<!-- Soft white divider -->
+<div
+    class="w-full h-px bg-[#DDE5DF]/50"
+></div>
+<footer>
+</footer>
     <!-- Footer -->
     <footer class="bg-surface-container-lowest w-full pt-16 border-t border-white/5">
         <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
@@ -671,7 +762,7 @@
                         <span class="font-black tracking-tight text-[1.25rem] leading-[1.6]"><span class="text-[#2ecc71]">TOP</span><span class="text-white">LOCAL</span><span class="text-[#e74c3c]">WEBSITES</span></span>
                     </div>
                     <p class="text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6] max-w-sm">Modern websites for local businesses that want more visibility, more customers, and a stronger online presence.</p>
-                    <p class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic">Helping Local Businesses Grow Online</p>
+                    <p class="text-[0.7rem] leading-none font-normal tracking-[0.04em] text-[#d6dde8] opacity-90 italic"><u>Helping Local Businesses Grow Online</u> 🙂</p>
                 </div>
                 <div class="md:col-span-2">
                     <h4 class="text-on-surface font-bold mb-6 uppercase tracking-widest text-[0.75rem] leading-[1.6]">Company</h4>
@@ -709,9 +800,9 @@
         </div>
         <div style="background-color: #252A27">
             <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-                <div class="border-t border-white/5 pt-6 pb-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 items-center text-[0.8125rem] text-on-surface-variant">
-                    <p class="text-center md:col-span-9">&copy; 2026 Top Local Websites. All rights reserved.</p>
-                    <div class="flex items-center gap-4 justify-center md:justify-start md:col-span-3">
+                <div class="border-t border-white/5 pt-3 pb-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 text-[0.8125rem] text-on-surface-variant">
+                    <p class="italic whitespace-nowrap">&copy; 2026 Top Local Websites. All rights reserved.</p>
+                    <div class="flex flex-wrap items-center gap-6 whitespace-nowrap">
                     <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
                     <a href="terms.html" class="hover:text-primary transition-colors">Terms of Service</a>
                     <a href="cookies.html" class="hover:text-primary transition-colors">Cookies Policy</a>
@@ -742,6 +833,53 @@
         closeBtn.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
         mobileMenu.querySelectorAll('a, button').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full')));
 
+        // Scroll / load reveal (hero content entrance — matches work.html)
+        const revealElements = document.querySelectorAll('.reveal, .reveal-group');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.classList.contains('reveal-group')) {
+                        entry.target.querySelectorAll('.reveal-item').forEach((item, idx) =>
+                            setTimeout(() => item.classList.add('active'), idx * 100)
+                        );
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => observer.observe(el));
+
+    </script>
+    <!-- Back to top -->
+    <button
+      class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-30 flex h-[42px] w-[42px] md:h-11 md:w-11 items-center justify-center rounded-full border border-white/20 bg-primary text-on-primary shadow-[0_0_20px_rgba(0,194,110,0.35)] opacity-0 invisible pointer-events-none transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <span class="material-symbols-outlined text-xl leading-none"
+        >arrow_upward</span
+      >
+    </button>
+    <script>
+      (function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (!backToTop) return;
+        const updateBackToTop = () => {
+          const show = window.scrollY > 400;
+          backToTop.classList.toggle("opacity-0", !show);
+          backToTop.classList.toggle("invisible", !show);
+          backToTop.classList.toggle("pointer-events-none", !show);
+        };
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        window.addEventListener("load", updateBackToTop);
+        updateBackToTop();
+      })();
     </script>
 </body>
 
