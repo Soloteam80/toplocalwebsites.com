@@ -56,6 +56,38 @@
       href="favicon-192x192.png"
     />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://toplocalwebsites.com/#organization",
+            "name": "Top Local Websites",
+            "url": "https://toplocalwebsites.com/",
+            "logo": "https://toplocalwebsites.com/assets/images/toplocalwebsites-logo.png",
+            "description": "Top Local Websites builds fast, professional websites for local businesses across Europe. More calls, more bookings, and more customers. Starting from €790.",
+            "areaServed": "Europe"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://toplocalwebsites.com/#website",
+            "name": "Top Local Websites",
+            "url": "https://toplocalwebsites.com/",
+            "publisher": { "@id": "https://toplocalwebsites.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://toplocalwebsites.com/#webpage",
+            "url": "https://toplocalwebsites.com/",
+            "name": "Top Local Websites | We Help Local Businesses Grow Online",
+            "description": "Top Local Websites builds fast, professional websites for local businesses across Europe. More calls, more bookings, and more customers. Starting from €790.",
+            "isPartOf": { "@id": "https://toplocalwebsites.com/#website" },
+            "about": { "@id": "https://toplocalwebsites.com/#organization" }
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
         --primary-color: #00c26e;

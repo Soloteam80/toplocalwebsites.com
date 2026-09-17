@@ -25,6 +25,26 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://toplocalwebsites.com/contact.html#webpage",
+            "url": "https://toplocalwebsites.com/contact.html",
+            "name": "Contact Us | Top Local Websites | Free Website Quote",
+            "description": "Contact Top Local Websites — get a free consultation, no-obligation quote and honest advice for your local business website. We reply within one business day.",
+            "isPartOf": {
+              "@id": "https://toplocalwebsites.com/#website"
+            },
+            "about": {
+              "@id": "https://toplocalwebsites.com/#organization"
+            }
+          }
+        ]
+      }
+    </script>
     <style>
         :root {
             --primary-color: #00c26e;
@@ -662,21 +682,18 @@
           id="contact-form"
           name="contact"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
+          action="https://formspree.io/f/xbgljdkl"
           class="space-y-6 relative z-10"
           novalidate
         >
 
-          <!-- NETLIFY HONEYPOT -->
+          <!-- FORMSPREE HONEYPOT (_gotcha): hidden from humans, only bots fill it -->
           <p class="hidden">
             <label>
               Don’t fill this out if you’re human:
-              <input name="bot-field" />
+              <input name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
             </label>
           </p>
-
-          <input type="hidden" name="form-name" value="contact" />
 
           <!-- NAME & EMAIL -->
           <div class="grid sm:grid-cols-2 gap-6">
@@ -1072,7 +1089,7 @@
                 return;
             }
             
-            // Submit to Netlify Forms via AJAX - only after validation has passed
+            // Submit to Formspree via AJAX - only after validation has passed
             const originalButtonHTML = submitBtn ? submitBtn.innerHTML : '';
 
             if (submitBtn) {
@@ -1084,23 +1101,24 @@
 
             try {
                 const formData = new FormData(form);
-                if (!formData.has("form-name")) {
-                    formData.append("form-name", "contact");
-                }
 
-                const response = await fetch("/", {
+                const response = await fetch(form.action, {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
+                        // Ask Formspree for a JSON response instead of an HTML redirect
+                        "Accept": "application/json"
                     },
-                    body: new URLSearchParams(formData).toString()
+                    // FormData is sent as-is so the browser generates the
+                    // multipart/form-data Content-Type (with boundary) itself.
+                    // Content-Type must therefore NOT be set manually.
+                    body: formData
                 });
 
                 if (!response.ok) {
-                    throw new Error('Netlify Forms submission failed');
+                    throw new Error('Formspree submission failed');
                 }
 
-                // Reached only when Netlify confirms the submission was accepted
+                // Reached only when Formspree confirms the submission was accepted
                 form.style.display = 'none';
                 successMsg.classList.remove('hidden');
                 successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
