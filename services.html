@@ -37,14 +37,7 @@
       Our Services | Top Local Websites | Fast, Customer-Generating Web Design
     </title>
     <link rel="stylesheet" href="assets/css/tailwind.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
+<link href="assets/css/fonts.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -110,7 +103,7 @@
       .glow-hover:hover {
         box-shadow: 0 0 20px rgba(0, 194, 110, 0.2);
       }
-      .material-symbols-outlined {
+      .icon {
         font-variation-settings:
           "FILL" 0,
           "wght" 400,
@@ -216,7 +209,7 @@
             <img
               alt="Top Local Websites Logo"
               class="h-[32px] md:h-[40px] w-auto object-contain"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Rinw5MmMDCfUVED7wSoTb4oEkRuPvk_CqDj11X5dvJoQoOv1lVpRvVhk4SYvWwhVRPTf48VvHoaliQbkClzt0JYEL3oqag7jYRO_1-jTDHLF4jqOnTiErlvD2bFyhjmeP2itryk4Z8T1s6IkY4LstkkVfbXkK_s8lOdbLcKQMw3QynowwVW0GS26Qa0qYx-mfpRQe0TwpSAFZRpX0Omgbl2BoDCzvihOH9UOXq8C1ZyCsoQeV96xf-Fe_SzLg7MVLQFroIKiwugP"
+              src="assets/images/newtoplocalwebsites-logo.png"
             />
             <div class="flex items-center font-black">
               <div class="flex flex-col">
@@ -275,7 +268,7 @@
             class="md:hidden text-on-surface flex items-center justify-center p-2 focus:outline-none"
             aria-label="Toggle mobile menu"
           >
-            <span class="material-symbols-outlined text-3xl">menu</span>
+            <svg class="icon text-3xl" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
           </button>
         </div>
       </div>
@@ -288,7 +281,7 @@
           class="absolute top-6 right-margin-mobile text-on-surface p-2 focus:outline-none"
           aria-label="Close mobile menu"
         >
-          <span class="material-symbols-outlined text-3xl">close</span>
+          <svg class="icon text-3xl" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
         <a
           class="text-2xl text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-wider"
@@ -566,10 +559,7 @@
             <div
               class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
-              <span
-                class="material-symbols-outlined text-primary text-4xl mb-4 block"
-                >language</span
-              >
+              <svg class="icon text-primary text-4xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8 8 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14A8 8 0 0 1 4 12c0-.69.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8 8 0 0 1 5.07 16zm2.95-8H5.07a8 8 0 0 1 3.33-3.56A15.7 15.7 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8 8 0 0 1-3.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"/></svg>
               <div
                 class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
               >
@@ -585,10 +575,7 @@
             <div
               class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
-              <span
-                class="material-symbols-outlined text-primary text-4xl mb-4 block"
-                >smartphone</span
-              >
+              <svg class="icon text-primary text-4xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10z"/></svg>
               <div
                 class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
               >
@@ -605,10 +592,7 @@
             <div
               class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
-              <span
-                class="material-symbols-outlined text-primary text-4xl mb-4 block"
-                >bolt</span
-              >
+              <svg class="icon text-primary text-4xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66l.07-.15C8.7 9.9 10.6 6.6 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C14.4 14.5 12.5 17.8 11 21z"/></svg>
               <div
                 class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
               >
@@ -624,10 +608,7 @@
             <div
               class="glass-surface p-8 rounded-2xl text-center hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 group reveal-item"
             >
-              <span
-                class="material-symbols-outlined text-primary text-4xl mb-4 block"
-                >travel_explore</span
-              >
+              <svg class="icon text-primary text-4xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8 8 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14A8 8 0 0 1 4 12c0-.69.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8 8 0 0 1 5.07 16zm2.95-8H5.07a8 8 0 0 1 3.33-3.56A15.7 15.7 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8 8 0 0 1-3.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"/></svg>
               <div
                 class="text-white text-3xl font-extrabold mb-1 group-hover:scale-110 transition"
               >
@@ -697,10 +678,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >desktop_windows</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21 2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 14H3V4h18z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Website Design
                   </h3>
@@ -714,10 +692,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >stay_current_portrait</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Mobile Optimization
                   </h3>
@@ -732,10 +707,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >ads_click</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M11.5 11.5 20 15l-3.5 1.2L15 20zM10 3v3M4 4l2 2M3 10h3M4 16l2-2"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Boost Conversions
                   </h3>
@@ -750,10 +722,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >autorenew</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 6v3l4-4-4-4v3a8 8 0 0 0-8 8c0 1.57.46 3.03 1.24 4.26L6.7 14.8A5.87 5.87 0 0 1 6 12a6 6 0 0 1 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8a6 6 0 0 1-6 6v-3l-4 4 4 4v-3a8 8 0 0 0 8-8c0-1.57-.46-3.03-1.24-4.26z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Website Redesign
                   </h3>
@@ -788,10 +757,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >travel_explore</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8 8 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14A8 8 0 0 1 4 12c0-.69.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8 8 0 0 1 5.07 16zm2.95-8H5.07a8 8 0 0 1 3.33-3.56A15.7 15.7 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8 8 0 0 1-3.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Local SEO Optimization
                   </h3>
@@ -806,10 +772,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >storefront</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.9 8.89l-1.05-4.37A2 2 0 0 0 18.94 3H5.06a2 2 0 0 0-1.91 1.52L2.1 8.89A3.01 3.01 0 0 0 4 12.9V20a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.1a3.01 3.01 0 0 0 1.9-4.01zM15 20h-4v-4h4zm2-4v5H7v-5H5v-7h14v7z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Google Business Profile Optimisation
                   </h3>
@@ -844,10 +807,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >settings_suggest</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.4 13c.04-.33.06-.66.06-1s-.02-.67-.06-1l2.11-1.65a.5.5 0 0 0 .12-.64l-2-3.46a.5.5 0 0 0-.61-.22l-2.49 1a7.3 7.3 0 0 0-1.73-1l-.38-2.65A.5.5 0 0 0 13.9 2h-4a.5.5 0 0 0-.5.42l-.38 2.65c-.63.26-1.2.6-1.73 1l-2.49-1a.5.5 0 0 0-.61.22l-2 3.46a.5.5 0 0 0 .12.64L4.6 11c-.04.33-.06.66-.06 1s.02.67.06 1l-2.11 1.65a.5.5 0 0 0-.12.64l2 3.46c.13.22.39.3.61.22l2.49-1c.53.4 1.1.74 1.73 1l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.63-.26 1.2-.6 1.73-1l2.49 1c.22.08.48 0 .61-.22l2-3.46a.5.5 0 0 0-.12-.64zM12 15.5A3.5 3.5 0 1 1 15.5 12 3.5 3.5 0 0 1 12 15.5z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Contact &amp; Booking Integrations
                   </h3>
@@ -863,10 +823,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >cloud_done</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4a7.48 7.48 0 0 0-6.64 4.04A5.99 5.99 0 0 0 6 20h12a6 6 0 0 0 6-6c0-3.02-2.24-5.5-5.15-5.96zM10 17l-3.5-3.5 1.41-1.41L10 14.17l4.59-4.58L16 11z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Managed Hosting &amp; Website Care
                   </h3>
@@ -901,10 +858,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >description</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     PDF Menus &amp; Service Guides
                   </h3>
@@ -919,10 +873,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >edit_document</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h5v-2H6V4h7v5h5v2h2V8zm2.5 9.5L15 13l4 4 1.5-1.5zm4.2 5.5-4-4-1.7 1.7 4 4z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Professional Copywriting
                   </h3>
@@ -937,10 +888,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >campaign</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4h2v-4h5l6 4V4z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Social Media Starter Kit
                   </h3>
@@ -955,10 +903,7 @@
                 <div
                   class="glass-surface p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,194,110,0.15)] hover:border-primary/30 transition-all duration-300 reveal-item"
                 >
-                  <span
-                    class="material-symbols-outlined text-primary text-5xl mb-6 block"
-                    >videocam</span
-                  >
+                  <svg class="icon text-primary text-5xl mb-6 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg>
                   <h3 class="mb-3 text-[1.25rem] font-semibold text-white">
                     Short Promo Videos
                   </h3>
@@ -1024,10 +969,7 @@
                 <div class="absolute inset-0 bg-black/60"></div>
               </div>
               <div class="relative z-10">
-                <span
-                  class="material-symbols-outlined text-primary text-5xl mb-4 block"
-                  >restaurant</span
-                >
+                <svg class="icon text-primary text-5xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2zm5-7v6h2v14h2V2z"/></svg>
                 <h3 class="text-white font-semibold text-[1.25rem] mb-2">
                   Restaurants & Cafés
                 </h3>
@@ -1052,10 +994,7 @@
                 <div class="absolute inset-0 bg-black/60"></div>
               </div>
               <div class="relative z-10">
-                <span
-                  class="material-symbols-outlined text-primary text-5xl mb-4 block"
-                  >handyman</span
-                >
+                <svg class="icon text-primary text-5xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.67 18.17 10.83 7.33a3 3 0 0 0-1.42-1.6V4a2 2 0 0 0-2-2H5v2.5h2V4h.41v2.73a3 3 0 0 0-.83.83L2.5 4.7 4 3.2l13.6 13.6-1.5 1.5zM6 20l-1.5-1.5 6.1-6.1 1.5 1.5z"/></svg>
                 <h3 class="text-white font-semibold text-[1.25rem] mb-2">
                   Local Services
                 </h3>
@@ -1080,10 +1019,7 @@
                 <div class="absolute inset-0 bg-black/60"></div>
               </div>
               <div class="relative z-10">
-                <span
-                  class="material-symbols-outlined text-primary text-5xl mb-4 block"
-                  >spa</span
-                >
+                <svg class="icon text-primary text-5xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 22c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-3-5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-3-5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
                 <h3 class="text-white font-semibold text-[1.25rem] mb-2">
                   Beauty, Wellness & Studios
                 </h3>
@@ -1108,10 +1044,7 @@
                 <div class="absolute inset-0 bg-black/60"></div>
               </div>
               <div class="relative z-10">
-                <span
-                  class="material-symbols-outlined text-primary text-5xl mb-4 block"
-                  >fitness_center</span
-                >
+                <svg class="icon text-primary text-5xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.57 14.86 22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
                 <h3 class="text-white font-semibold text-[1.25rem] mb-2">
                   Gyms & Fitness
                 </h3>
@@ -1136,10 +1069,7 @@
                 <div class="absolute inset-0 bg-black/60"></div>
               </div>
               <div class="relative z-10">
-                <span
-                  class="material-symbols-outlined text-primary text-5xl mb-4 block"
-                  >store</span
-                >
+                <svg class="icon text-primary text-5xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4v2h16zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6zm-9 4H6v-4h6z"/></svg>
                 <h3 class="text-white font-semibold text-[1.25rem] mb-2">
                   Retail & Boutiques
                 </h3>
@@ -1164,10 +1094,7 @@
                 <div class="absolute inset-0 bg-black/60"></div>
               </div>
               <div class="relative z-10">
-                <span
-                  class="material-symbols-outlined text-primary text-5xl mb-4 block"
-                  >factory</span
-                >
+                <svg class="icon text-primary text-5xl mb-4 block" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 10V4l-6 3-6-3-6 3-2 1v14h20zM6 18H4v-4h2zm4 0H8v-4h2zm4 0h-2v-4h2zm4 0h-2v-4h2z"/></svg>
                 <h3 class="text-white font-semibold text-[1.25rem] mb-2">
                   Industrial & B2B
                 </h3>
@@ -1637,7 +1564,7 @@
               <img
                 alt="Top Local Websites Logo"
                 class="h-8 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Rinw5MmMDCfUVED7wSoTb4oEkRuPvk_CqDj11X5dvJoQoOv1lVpRvVhk4SYvWwhVRPTf48VvHoaliQbkClzt0JYEL3oqag7jYRO_1-jTDHLF4jqOnTiErlvD2bFyhjmeP2itryk4Z8T1s6IkY4LstkkVfbXkK_s8lOdbLcKQMw3QynowwVW0GS26Qa0qYx-mfpRQe0TwpSAFZRpX0Omgbl2BoDCzvihOH9UOXq8C1ZyCsoQeV96xf-Fe_SzLg7MVLQFroIKiwugP"
+                src="assets/images/newtoplocalwebsites-logo.png"
               /><span
                 class="font-black tracking-tight text-[1.25rem] leading-[1.6]"
                 ><span class="text-[#2ecc71]">TOP</span
@@ -1756,17 +1683,12 @@
               <a
                 class="group flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-[0.9375rem] md:text-[1rem] leading-[1.6]"
                 href="mailto:info@toplocalwebsites.com"
-                ><span
-                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform text-xl"
-                  >mail</span
-                ><span>info@toplocalwebsites.com</span></a
+                ><svg class="icon text-primary group-hover:scale-110 transition-transform text-xl" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg><span>info@toplocalwebsites.com</span></a
               >
               <div
                 class="flex items-center gap-3 text-on-surface-variant text-[0.9375rem] md:text-[1rem] leading-[1.6]"
               >
-                <span class="material-symbols-outlined text-primary text-xl"
-                  >schedule</span
-                ><span>9AM – 7PM (Mon–Sat, Dublin Time)</span>
+                <svg class="icon text-primary text-xl" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5 3 .75-1.23-4.25-2.52z"/></svg><span>9AM – 7PM (Mon–Sat, Dublin Time)</span>
               </div>
             </div>
             <div class="flex gap-4 items-center mt-6">
@@ -1971,9 +1893,7 @@
       type="button"
       aria-label="Back to top"
     >
-      <span class="material-symbols-outlined text-xl leading-none"
-        >arrow_upward</span
-      >
+      <svg class="icon text-xl leading-none" style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8z"/></svg>
     </button>
     <script>
       (function () {
